@@ -1,0 +1,32 @@
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "Yun: (Holy shit!!)\nYun: (This is actually happening.)\nYun: (Okay, okay, calm down...)\nYun: (Gotta take it easy or she'll think I'm a creep...)\nYun: Hey, nice date, huh?\nYun: (HOLY FUCK WHO SAYS THAT)\nNoa: Date?\nYun: (Oh.)\nYun: (Oh no.)\nYun: (She's cute when she's confused but-\nYun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\nYun: (DID I MAKE IT CLEAR?)\nYun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n\n[[Yeah, date!!|1A]]\n[[Haha what are you talking about|1B]]",
+		"position": {
+			"x": 498,
+			"y": 113
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1A",
+		"tags": "",
+		"body": "Noa: Uhm...\nNoa: What's a date?\nYun: (OKAY I KNOW SHE'S SERIOUSLY SHELTERED BUT SERIOUSLY?)",
+		"position": {
+			"x": 337,
+			"y": 394
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1B",
+		"tags": "",
+		"body": "Noa: Uh...okay!\nYun: (Saved...I'm saved...)\nYun: (That's one thing I can thank her mom for, I guess.)",
+		"position": {
+			"x": 714,
+			"y": 396
+		},
+		"colorID": 0
+	}
+]

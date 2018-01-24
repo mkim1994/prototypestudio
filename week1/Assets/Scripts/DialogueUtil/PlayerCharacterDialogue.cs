@@ -18,7 +18,7 @@ public class PlayerCharacterDialogue : MonoBehaviour
     public float movementFromButtons { get; set; }
 
     /// Draw the range at which we'll start talking to people.
-    void OnDrawGizmosSelected()
+   /* void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
 
@@ -27,7 +27,7 @@ public class PlayerCharacterDialogue : MonoBehaviour
 
         // Need to draw at position zero because we set position in the line above
         Gizmos.DrawWireSphere(Vector3.zero, interactionRadius);
-    }
+    }*/
 
     /// Update is called once per frame
     void Update()
@@ -39,7 +39,7 @@ public class PlayerCharacterDialogue : MonoBehaviour
             return;
         }
 
-        HandleMovement();
+       // HandleMovement();
 
         // Detect if we want to start a conversation
         if (Input.GetKeyDown(KeyCode.Space))

@@ -30,6 +30,7 @@ using UnityEngine.UI;
 using System.Text;
 using System.Collections.Generic;
 using Yarn.Unity;
+using System;
 
 /// Displays dialogue lines to the player, and sends
 /// user choices back to the dialogue system.
@@ -49,7 +50,11 @@ public class DialogueUI : DialogueUIBehaviour
     public GameObject dialogueContainer;
 
     /// The UI element that displays lines
-    public Text lineText;
+    public Text lineTextYun;
+    public Text lineTextNoa;
+
+    public Image selectTail1;
+    public Image selectTail2;
 
     /// A UI element that appears after lines have finished appearing
     public GameObject continuePrompt;
@@ -76,7 +81,10 @@ public class DialogueUI : DialogueUIBehaviour
         if (dialogueContainer != null)
             dialogueContainer.SetActive(false);
 
-        lineText.gameObject.SetActive(false);
+        lineTextYun.transform.parent.gameObject.SetActive(false);
+        lineTextNoa.transform.parent.gameObject.SetActive(false);
+
+
 
         foreach (var button in optionButtons)
         {
@@ -88,28 +96,88 @@ public class DialogueUI : DialogueUIBehaviour
             continuePrompt.SetActive(false);
     }
 
+    void Update(){
+        // for (int i = 0; i <optionButtons)
+
+        if (optionButtons[0].gameObject.activeSelf)
+        {
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.W)) // go down or up
+            {
+                if (optionButtons[0].image.canvasRenderer.GetAlpha() > 0.2f) //if top is currently selected
+                {
+                    optionButtons[0].image.canvasRenderer.SetAlpha(0.2f);
+                    selectTail1.canvasRenderer.SetAlpha(0.2f);
+                    optionButtons[1].image.canvasRenderer.SetAlpha(1.0f);
+                    selectTail2.canvasRenderer.SetAlpha(1.0f);
+                }
+                else //if bottom is currently selected
+                {
+                    optionButtons[0].image.canvasRenderer.SetAlpha(1f);
+                    selectTail1.canvasRenderer.SetAlpha(1f);
+                    optionButtons[1].image.canvasRenderer.SetAlpha(0.2f);
+                    selectTail2.canvasRenderer.SetAlpha(0.2f);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (optionButtons[0].image.canvasRenderer.GetAlpha() > 0.2f)
+                { //if top is selected
+                    SetOption(0);
+                }
+                else
+                {
+                    SetOption(1);
+                }
+            }
+        }
+    }
+
     /// Show a line of dialogue, gradually
     public override IEnumerator RunLine(Yarn.Line line)
     {
+        string[] splitbycolon = line.text.Split(":".ToCharArray(), 2);
+        string speaker = splitbycolon[0];
+        string content = splitbycolon[1];
+        Debug.Log(speaker + ", " + content);
         // Show the text
-        lineText.gameObject.SetActive(true);
+        if (speaker.Equals("Noa"))
+        {
+            lineTextNoa.transform.parent.gameObject.SetActive(true);
+        }
+        else
+        {
+            lineTextYun.transform.parent.gameObject.SetActive(true);
+        }
+
+
 
         if (textSpeed > 0.0f)
         {
             // Display the line one character at a time
             var stringBuilder = new StringBuilder();
 
-            foreach (char c in line.text)
+            foreach (char c in content)
             {
                 stringBuilder.Append(c);
-                lineText.text = stringBuilder.ToString();
+                if (speaker.Equals("Noa"))
+                {
+                    lineTextNoa.text = stringBuilder.ToString();
+                } else{
+                    lineTextYun.text = stringBuilder.ToString();
+                }
                 yield return new WaitForSeconds(textSpeed);
             }
         }
         else
         {
             // Display the line immediately if textSpeed == 0
-            lineText.text = line.text;
+            if (speaker.Equals("Noa"))
+            {
+                lineTextNoa.text = content;
+            } else{
+                lineTextYun.text = content;
+            }
         }
 
         // Show the 'press any key' prompt when done, if we have one
@@ -117,13 +185,15 @@ public class DialogueUI : DialogueUIBehaviour
             continuePrompt.SetActive(true);
 
         // Wait for any user input
-        while (Input.anyKeyDown == false)
+        //while (Input.anyKeyDown == false)
+        while(Input.GetKeyDown(KeyCode.Space) == false)
         {
             yield return null;
         }
 
         // Hide the text and prompt
-        lineText.gameObject.SetActive(false);
+        lineTextYun.transform.parent.gameObject.SetActive(false);
+        lineTextNoa.transform.parent.gameObject.SetActive(false);
 
         if (continuePrompt != null)
             continuePrompt.SetActive(false);
@@ -145,13 +215,22 @@ public class DialogueUI : DialogueUIBehaviour
         int i = 0;
         foreach (var optionString in optionsCollection.options)
         {
-            optionButtons[i].gameObject.SetActive(true);
+
+        optionButtons[i].gameObject.SetActive(true);
+
             optionButtons[i].GetComponentInChildren<Text>().text = optionString;
             i++;
         }
+        optionButtons[0].image.canvasRenderer.SetAlpha(1f);
+        selectTail1.canvasRenderer.SetAlpha(1f);
+        optionButtons[1].image.canvasRenderer.SetAlpha(0.2f);
+        selectTail2.canvasRenderer.SetAlpha(0.2f);
+
 
         // Record that we're using it
         SetSelectedOption = optionChooser;
+
+
 
         // Wait until the chooser has been used and then removed (see SetOption below)
         while (SetSelectedOption != null)
