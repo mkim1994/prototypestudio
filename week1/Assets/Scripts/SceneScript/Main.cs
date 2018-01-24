@@ -8,7 +8,7 @@ public class Main : Scene<TransitionData> {
 
 	// Use this for initialization
 	void Start () {
-
+        Services.GameManager.audioController.bgm.Play();
 
 	}
 	

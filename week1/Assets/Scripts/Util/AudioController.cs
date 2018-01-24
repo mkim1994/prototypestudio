@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioController : MonoBehaviour {
 
     public AudioSource bgm;
+    public AudioSource danger;
 	// Use this for initialization
 	void Start () {
 		

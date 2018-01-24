@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject sceneRoot;
     public Camera currentCamera;
     public GameObject TestingScenes;
+    public AudioController audioController;
 	void Awake()
 	{
         TestingScenes.SetActive(false);

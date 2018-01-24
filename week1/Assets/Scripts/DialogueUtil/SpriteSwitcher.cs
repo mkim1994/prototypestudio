@@ -2,8 +2,9 @@
 using UnityEngine;
 using System.Collections;
 using Yarn.Unity;
+using UnityEngine.UI;
 /// Attach sprite renderer to game object
-[RequireComponent(typeof(SpriteRenderer))]
+//[RequireComponent(typeof(SpriteRenderer))]
 /// Attach SpriteSwitcher to game object
 // <<setsprite [name of the GameObject that this script is attached to] [SpriteInfo name of the sprite you want]>> <-- put 
 // e.x. <<setsprite ShipFace happy>>
@@ -39,7 +40,8 @@ public class SpriteSwitcher : MonoBehaviour
             return;
         }
 
-        GetComponent<SpriteRenderer>().sprite = s;
+        //GetComponent<SpriteRenderer>().sprite = s;
+        GetComponent<Image>().sprite = s;
     }
 }
 
