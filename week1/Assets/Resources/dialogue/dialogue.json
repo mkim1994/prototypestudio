@@ -12,7 +12,7 @@
 	{
 		"title": "1A",
 		"tags": "",
-		"body": "<<setsprite YunSprite flirty>>\nNoa: Uhm...\n<<setsprite NoaSprite reallyconfused>>\nNoa: What's a date?\n<<setsprite YunSprite gayshocked>>\nYun: (OKAY I KNOW SHE'S SERIOUSLY SHELTERED BUT SERIOUSLY?)",
+		"body": "<<if visited(\"1A\") is false>>\n    <<setsprite YunSprite flirty>>\n    Noa: Uhm...\n    <<setsprite NoaSprite reallyconfused>>\n    Noa: What's a date?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OKAY I KNOW SHE'S SERIOUSLY SHELTERED BUT SERIOUSLY?)\n<<else>>\n    Noa: What were we talking about...?\n    Yun: NOT DATING.\n<<endif>>",
 		"position": {
 			"x": 451,
 			"y": 398
@@ -22,7 +22,7 @@
 	{
 		"title": "1B",
 		"tags": "",
-		"body": "<<setsprite NoaSprite idle>>\nNoa: Uh...okay!\n<<setsprite YunSprite flustered>>\nYun: (Saved...I'm saved...)\n<<setsprite YunSprite idle>>\nYun: (That's one thing I can thank her mom for, I guess.)",
+		"body": "<<if visited(\"1B\") is false>>\n    <<setsprite NoaSprite idle>>\n    Noa: Uh...okay!\n    <<setsprite YunSprite flustered>>\n    Yun: (Saved...I'm saved...)\n    <<setsprite YunSprite idle>>\n    Yun: (That's one thing I can thank her mom for, I guess.)\n<<else>>\n    Noa: What were we talking about?\n    Yun: HAHA YEAH. WHAT WERE WE TALKING ABOUT.\n<<endif>>",
 		"position": {
 			"x": 663,
 			"y": 397

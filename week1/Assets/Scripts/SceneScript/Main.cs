@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 
 public class Main : Scene<TransitionData> {
 
-	// Use this for initialization
+    // Use this for initialization
+    public DialogueRunner dialogue;
 	void Start () {
         Services.GameManager.audioController.bgm.Play();
 

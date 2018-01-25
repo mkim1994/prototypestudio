@@ -49,10 +49,10 @@ public class GameManager : MonoBehaviour {
 
 	}
 
-	void Reset(Reset e)
+/*	void Reset(Reset e)
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-	}
+	}*/
 
     //UI buttons
 

@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 114194542131704394}
   - component: {fileID: 114700047873540842}
   - component: {fileID: 114168311375014512}
+  - component: {fileID: 114135689902675960}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -530,7 +531,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1503787943920424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: -4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4161150892995280}
@@ -900,6 +901,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114135689902675960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134584813119350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8aa0ad6aa624d8d9375980f03cbb0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114168311375014512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -960,11 +972,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea27a6e95e0054f66a08f3803e3a142c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultPos: {x: 3, y: -4.5, z: 0}
   moveSpeed: 0.1
   minX: -5
-  maxX: 5.5
-  minY: -7
+  maxX: 4.5
+  minY: -5
   maxY: 3.2
+  lastMousePos: {x: 0, y: 0, z: 0}
+  handBackOff: 0
 --- !u!114 &114194542131704394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1369,6 +1384,9 @@ MonoBehaviour:
   - name: busted
     value: 0
     type: 0
+  - name: gettingthehint
+    value: 0
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &114756613025342674
 MonoBehaviour:
@@ -1411,6 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2822009c4f0414b853cc9c72d1137f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogue: {fileID: 114194542131704394}
 --- !u!114 &114788692225449826
 MonoBehaviour:
   m_ObjectHideFlags: 1
