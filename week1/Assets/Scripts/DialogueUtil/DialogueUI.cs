@@ -133,13 +133,22 @@ public class DialogueUI : DialogueUIBehaviour
         }
     }
 
+    public void CleanUI(){
+        //Debug.Log("cleaning");
+        lineTextYun.transform.parent.gameObject.SetActive(false);
+        lineTextNoa.transform.parent.gameObject.SetActive(false);
+        foreach(Button button in optionButtons){
+            button.gameObject.SetActive(false);
+        }
+    }
+
     /// Show a line of dialogue, gradually
     public override IEnumerator RunLine(Yarn.Line line)
     {
         string[] splitbycolon = line.text.Split(":".ToCharArray(), 2);
         string speaker = splitbycolon[0];
         string content = splitbycolon[1];
-        Debug.Log(speaker + ", " + content);
+       // Debug.Log(speaker + ", " + content);
         // Show the text
         if (speaker.Equals("Noa"))
         {

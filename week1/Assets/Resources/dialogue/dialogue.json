@@ -1,8 +1,8 @@
 [
 	{
-		"title": "Start",
+		"title": "date",
 		"tags": "",
-		"body": "<<setsprite YunSprite flustered>>\nYun: (Holy shit!!)\nYun: (This is actually happening.)\nYun: (Okay, okay, calm down...)\nYun: (Gotta take it easy or she'll think I'm a creep...)\n<<setsprite YunSprite flirty>>\nYun: Hey, nice date, huh?\n<<setsprite YunSprite gayshocked>>\nYun: (HOLY FUCK WHO SAYS THAT)\n<<setsprite NoaSprite confused>>\nNoa: Date?\n<<setsprite YunSprite confused>>\nYun: (Oh.)\n<<setsprite YunSprite shocked>>\nYun: (Oh no.)\n<<setsprite YunSprite flustered>>\nYun: (She's cute when she's confused but-\n<<setsprite YunSprite gayshocked>>\nYun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n<<setsprite YunSprite confused>>\nYun: (DID I MAKE IT CLEAR?)\n<<setsprite YunSprite flustered>>\nYun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n\n[[Yeah, date!!|1A]]\n[[Haha what are you talking about|1B]]",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite YunSprite flustered>>\n    Yun: (Holy shit!!)\n    Yun: (This is actually happening.)\n    Yun: (Okay, okay, calm down...)\n    Yun: (Gotta take it easy or she'll think I'm a creep...)\n    <<setsprite YunSprite flirty>>\n    Yun: Hey, nice date, huh?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (HOLY FUCK WHO SAYS THAT)\n    <<setsprite NoaSprite confused>>\n    Noa: Date?\n    <<setsprite YunSprite confused>>\n    Yun: (Oh.)\n    <<setsprite YunSprite shocked>>\n    Yun: (Oh no.)\n    <<setsprite YunSprite flustered>>\n    Yun: (She's cute when she's confused but-\n    <<setsprite YunSprite gayshocked>>\n    Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n    <<setsprite YunSprite confused>>\n    Yun: (DID I MAKE IT CLEAR?)\n    <<setsprite YunSprite flustered>>\n    Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n<<else>>\n    Yun: I'M SORRY!!\n    Yun: (WHAT THE FUCK WAS I THINKING)\n    Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n    Yun: (SHE DOESN'T EVEN KNOW THAT THIS IS A DATE)\n    Noa: So...what's a date?\n<<endif>>\n\n[[Yeah, date!!|1A]]\n[[Haha what are you talking about|1B]]",
 		"position": {
 			"x": 500,
 			"y": 113
@@ -12,7 +12,7 @@
 	{
 		"title": "1A",
 		"tags": "",
-		"body": "<<if visited(\"1A\") is false>>\n    <<setsprite YunSprite flirty>>\n    Noa: Uhm...\n    <<setsprite NoaSprite reallyconfused>>\n    Noa: What's a date?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OKAY I KNOW SHE'S SERIOUSLY SHELTERED BUT SERIOUSLY?)\n<<else>>\n    Noa: What were we talking about...?\n    Yun: NOT DATING.\n<<endif>>",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite YunSprite flirty>>\n    Noa: Uhm...\n    <<setsprite NoaSprite reallyconfused>>\n    Noa: What's a date?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OKAY I KNOW SHE'S SERIOUSLY SHELTERED BUT SERIOUSLY?)\n<<else>>\n    Noa: What were we talking about...?\n    Yun: NOT DATING.\n<<endif>>",
 		"position": {
 			"x": 451,
 			"y": 398
@@ -22,7 +22,7 @@
 	{
 		"title": "1B",
 		"tags": "",
-		"body": "<<if visited(\"1B\") is false>>\n    <<setsprite NoaSprite idle>>\n    Noa: Uh...okay!\n    <<setsprite YunSprite flustered>>\n    Yun: (Saved...I'm saved...)\n    <<setsprite YunSprite idle>>\n    Yun: (That's one thing I can thank her mom for, I guess.)\n<<else>>\n    Noa: What were we talking about?\n    Yun: HAHA YEAH. WHAT WERE WE TALKING ABOUT.\n<<endif>>",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite NoaSprite idle>>\n    Noa: Uh...okay!\n    <<setsprite YunSprite flustered>>\n    Yun: (Saved...I'm saved...)\n    <<setsprite YunSprite idle>>\n    Yun: (That's one thing I can thank her mom for, I guess.)\n<<else>>\n    Noa: What were we talking about?\n    Yun: HAHA YEAH. WHAT WERE WE TALKING ABOUT.\n<<endif>>",
 		"position": {
 			"x": 663,
 			"y": 397
@@ -32,17 +32,17 @@
 	{
 		"title": "Busted1",
 		"tags": "",
-		"body": "<<setsprite NoaSprite confused>>\nNoa: Uhm...\nNoa: What are you doing?\n<<setsprite YunSprite panic>>\nYun: N-nothing!!\n<<sprite YunSprite gayshocked>>\nYun: I'm doing nothing!!\n<<set $busted = $busted + 1>>",
+		"body": "<<setsprite NoaSprite confused>>\nNoa: Uhm...\nNoa: What are you doing?\n<<setsprite YunSprite panic>>\nYun: N-nothing!!\n<<setsprite YunSprite gayshocked>>\nYun: I'm doing nothing!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
 		"position": {
 			"x": 50,
-			"y": 87
+			"y": 86
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Busted2",
 		"tags": "",
-		"body": "<<setsprite NoaSprite confused>>\nNoa: I'm not sure what you're trying to do...\n<<setsprite YunSprite gayshocked>>\nYun: HAHA ME NEITHER!!\n<<set $busted = $busted + 1>>",
+		"body": "<<setsprite NoaSprite confused>>\nNoa: I'm not sure what you're trying to do...\n<<setsprite YunSprite gayshocked>>\nYun: HAHA ME NEITHER!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
 		"position": {
 			"x": 32,
 			"y": 307
@@ -52,7 +52,7 @@
 	{
 		"title": "Busted3",
 		"tags": "",
-		"body": "<<setsprite NoaSprite reallyconfused>>\nNoa: ...I think I'm going to go home...\nNoa: I'm not sure what you're trying to do,\nNoa: And I'm happy we got to hung out but...\n<<setsprite NoaSprite sad>>\nNoa: I'll see you.\n<<setsprite YunSprite shocked>>\nYun: No, wait!!\n<<set $busted = $busted + 1>>",
+		"body": "<<setsprite NoaSprite reallyconfused>>\nNoa: ...I think I'm going to go home...\nNoa: I'm not sure what you're trying to do,\nNoa: And I'm happy we got to hung out but...\n<<setsprite NoaSprite sad>>\nNoa: I'll see you.\n<<setsprite YunSprite shocked>>\nYun: No, wait!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
 		"position": {
 			"x": 33,
 			"y": 537

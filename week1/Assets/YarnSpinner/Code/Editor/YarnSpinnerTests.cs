@@ -86,7 +86,7 @@ public class YarnSpinnerTests {
         dialogueRunner.AddScript(text);
 
         dialogueUI = dialogueHost.AddComponent<TestDialogueUIBehaviour>();
-        dialogueRunner.dialogueUI = dialogueUI;
+//        dialogueRunner.dialogueUI = dialogueUI;
 
     }
 

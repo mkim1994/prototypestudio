@@ -17,6 +17,7 @@ public class ArmFollow : MonoBehaviour {
         lastMousePos = new Vector3(0, 0, 0);
         handBackOff = false;
         Services.EventManager.Register<HandTouchedEvent>(HandTouchedEvent);
+        Services.EventManager.Register<HandRejectedEvent>(HandRejectedEvent);
         mousePosition = defaultPos;
 	}
 	
@@ -70,15 +71,17 @@ public class ArmFollow : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other){
         Services.EventManager.Fire(new HandTouchedEvent());
-        //Debug.Log("TOUCHING");
 
     }
 
     void HandTouchedEvent(EventE e){
         handBackOff = true;
-        transform.DOMove(defaultPos,1f).OnComplete(()=>HandFinishedBackingOff());
-      //  lastMousePos = Input.mousePosition;
-       // transform.position.DoMove
+    }
+
+
+    void HandRejectedEvent(EventE e)
+    {
+        transform.DOMove(defaultPos, 1f).OnComplete(() => HandFinishedBackingOff());
     }
 
     void HandFinishedBackingOff(){

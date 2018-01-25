@@ -59,10 +59,12 @@ namespace Yarn.Unity
         public Yarn.Unity.VariableStorageBehaviour variableStorage;
 
         /// The object that will handle the actual display and user input
-        public Yarn.Unity.DialogueUIBehaviour dialogueUI;
+      //  public Yarn.Unity.DialogueUIBehaviour dialogueUI;
+        public DialogueUI dialogueUI;
 
         /// Which node to start from
         public string startNode = Yarn.Dialogue.DEFAULT_START;
+        private string prevNode = "";
 
         /// Whether we should start dialogue when the scene starts
         public bool startAutomatically = true;
@@ -201,7 +203,7 @@ namespace Yarn.Unity
             // Stop any processes that might be running already
             StopAllCoroutines ();
             dialogueUI.StopAllCoroutines ();
-
+            //dialogueUI.CleanUI();
             // Get it going
             StartCoroutine (RunDialogue (startNode));
         }
@@ -210,13 +212,32 @@ namespace Yarn.Unity
         {
             // Mark that we're in conversation.
             isDialogueRunning = true;
-
-            // Signal that we're starting up.
+              // Signal that we're starting up.
             yield return StartCoroutine(this.dialogueUI.DialogueStarted());
 
+
+           // Debug.Log("added " + currentNodeName);
+          //  Services.Main.dialogue.GetComponent<DialogueManager>().visitedNodes.Add(currentNodeName);
+          
             // Get lines, options and commands from the Dialogue object,
             // one at a time.
             foreach (Yarn.Dialogue.RunnerResult step in dialogue.Run(startNode)) {
+                // ADDING TO VISITEDNODES
+                if (prevNode != currentNodeName && currentNodeName != "")
+                {
+                    prevNode = currentNodeName;
+                    if (GetComponent<DialogueManager>().visitedNodes.Contains(currentNodeName))
+                    {
+                        Debug.Log(currentNodeName + " hasvisited true");
+                        variableStorage.SetValue("$hasvisited", new Yarn.Value(true));
+                    }
+                    else
+                    {
+                        Debug.Log(currentNodeName + " hasvisited false");
+                        variableStorage.SetValue("$hasvisited", new Yarn.Value(false));
+                        Services.Main.dialogue.GetComponent<DialogueManager>().visitedNodes.Add(currentNodeName);
+                    }
+                }
 
                 if (step is Yarn.Dialogue.LineResult) {
 

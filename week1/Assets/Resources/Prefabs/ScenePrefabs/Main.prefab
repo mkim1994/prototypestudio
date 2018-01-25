@@ -912,6 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb8aa0ad6aa624d8d9375980f03cbb0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visitedNodes: []
 --- !u!114 &114168311375014512
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -998,7 +999,7 @@ MonoBehaviour:
   overrideLanguage: 10
   variableStorage: {fileID: 114700047873540842}
   dialogueUI: {fileID: 114168311375014512}
-  startNode: Start
+  startNode: date
   startAutomatically: 1
   automaticCommands: 1
 --- !u!114 &114217483129976554
@@ -1382,11 +1383,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultVariables:
   - name: busted
-    value: 0
+    value: 1
     type: 0
   - name: gettingthehint
     value: 0
     type: 0
+  - name: hasvisited
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &114756613025342674
 MonoBehaviour:
