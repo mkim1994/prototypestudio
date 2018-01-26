@@ -99,38 +99,64 @@ public class DialogueUI : DialogueUIBehaviour
     void Update(){
         // for (int i = 0; i <optionButtons)
 
-        if (optionButtons[0].gameObject.activeSelf)
+
+        int activeOptions = 0;
+        for (int j = 0; j < optionButtons.Count; ++j)
         {
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.W)) // go down or up
+            if(optionButtons[j].gameObject.activeSelf){
+                activeOptions++;
+            }
+        }
+        for (int i = 0; i < activeOptions; ++i)
+        {
+            if (Input.GetKeyDown(KeyCode.S)) // go down
             {
-                if (optionButtons[0].image.canvasRenderer.GetAlpha() > 0.2f) //if top is currently selected
+                if (optionButtons[i].image.canvasRenderer.GetAlpha() > 0.2f)
                 {
-                    optionButtons[0].image.canvasRenderer.SetAlpha(0.2f);
-                    selectTail1.canvasRenderer.SetAlpha(0.2f);
-                    optionButtons[1].image.canvasRenderer.SetAlpha(1.0f);
-                    selectTail2.canvasRenderer.SetAlpha(1.0f);
+                    Debug.Log(i + ", activeOptions " + activeOptions);
+                    if (i == activeOptions - 1)
+                    {
+                        optionButtons[i].image.canvasRenderer.SetAlpha(0.2f);
+                        optionButtons[0].image.canvasRenderer.SetAlpha(1.0f);
+                    }
+                    else
+                    {
+                        optionButtons[i].image.canvasRenderer.SetAlpha(0.2f);
+                        optionButtons[i + 1].image.canvasRenderer.SetAlpha(1.0f);
+                    }
+                    break;
                 }
-                else //if bottom is currently selected
+            }
+            else if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (optionButtons[i].image.canvasRenderer.GetAlpha() > 0.2f)
                 {
-                    optionButtons[0].image.canvasRenderer.SetAlpha(1f);
-                    selectTail1.canvasRenderer.SetAlpha(1f);
-                    optionButtons[1].image.canvasRenderer.SetAlpha(0.2f);
-                    selectTail2.canvasRenderer.SetAlpha(0.2f);
+                    if (i == 0)
+                    {
+                        optionButtons[i].image.canvasRenderer.SetAlpha(0.2f);
+                        optionButtons[activeOptions - 1].image.canvasRenderer.SetAlpha(1f);
+                    }
+                    else
+                    {
+                        optionButtons[i].image.canvasRenderer.SetAlpha(0.2f);
+                        optionButtons[i - 1].image.canvasRenderer.SetAlpha(1f);
+                    }
+                    break;
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (optionButtons[i].image.canvasRenderer.GetAlpha() > 0.2f)
+                {
+                    SetOption(i);
+
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (optionButtons[0].image.canvasRenderer.GetAlpha() > 0.2f)
-                { //if top is selected
-                    SetOption(0);
-                }
-                else
-                {
-                    SetOption(1);
-                }
-            }
         }
+                
+            
+        
     }
 
     public void CleanUI(){
@@ -225,15 +251,22 @@ public class DialogueUI : DialogueUIBehaviour
         foreach (var optionString in optionsCollection.options)
         {
 
-        optionButtons[i].gameObject.SetActive(true);
-
+            optionButtons[i].gameObject.SetActive(true);
+            if (i != 0)
+            {
+                optionButtons[i].image.canvasRenderer.SetAlpha(0.2f);
+            } else{
+                optionButtons[i].image.canvasRenderer.SetAlpha(1f);
+            }
             optionButtons[i].GetComponentInChildren<Text>().text = optionString;
             i++;
+
         }
-        optionButtons[0].image.canvasRenderer.SetAlpha(1f);
+        /*optionButtons[0].image.canvasRenderer.SetAlpha(1f);
         selectTail1.canvasRenderer.SetAlpha(1f);
         optionButtons[1].image.canvasRenderer.SetAlpha(0.2f);
-        selectTail2.canvasRenderer.SetAlpha(0.2f);
+        selectTail2.canvasRenderer.SetAlpha(0.2f);*/
+
 
 
         // Record that we're using it

@@ -32,7 +32,8 @@ public class GameManager : MonoBehaviour {
         }
 
         if(Input.GetKeyUp(KeyCode.R)){
-            Services.SceneStackManager.Swap<TitleScreen>();
+            //Services.SceneStackManager.Swap<TitleScreen>();
+            SceneManager.LoadScene("main"); //for some reason dialogue system doesn't like the restart
         }
 	}
 

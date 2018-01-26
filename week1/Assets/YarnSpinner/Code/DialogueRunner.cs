@@ -203,7 +203,7 @@ namespace Yarn.Unity
             // Stop any processes that might be running already
             StopAllCoroutines ();
             dialogueUI.StopAllCoroutines ();
-            //dialogueUI.CleanUI();
+            dialogueUI.CleanUI();
             // Get it going
             StartCoroutine (RunDialogue (startNode));
         }
@@ -228,12 +228,10 @@ namespace Yarn.Unity
                     prevNode = currentNodeName;
                     if (GetComponent<DialogueManager>().visitedNodes.Contains(currentNodeName))
                     {
-                        Debug.Log(currentNodeName + " hasvisited true");
                         variableStorage.SetValue("$hasvisited", new Yarn.Value(true));
                     }
                     else
                     {
-                        Debug.Log(currentNodeName + " hasvisited false");
                         variableStorage.SetValue("$hasvisited", new Yarn.Value(false));
                         Services.Main.dialogue.GetComponent<DialogueManager>().visitedNodes.Add(currentNodeName);
                     }

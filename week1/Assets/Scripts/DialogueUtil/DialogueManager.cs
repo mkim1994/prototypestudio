@@ -55,8 +55,9 @@ public class DialogueManager : MonoBehaviour
     {
         int bustedVal = (int)storage.GetValue("$busted").AsNumber;
         prevNode = dialogue.currentNodeName;
-        //dialogue.
+
         dialogue.StartDialogue("Busted" + bustedVal);
+
 
     }
 
@@ -65,7 +66,14 @@ public class DialogueManager : MonoBehaviour
 
         //storage.SetValue("$busted", new Yarn.Value(storage.GetValue("$busted").AsNumber + 1f));
         //dialogue.StartDialogue(prevNode);
-        dialogue.StartDialogue(prevNode);
+        if (storage.GetValue("$busted").AsNumber > 3f)
+        {
+            dialogue.Stop();
+
+            Services.SceneStackManager.Swap<EndScreen>();
+        } else{
+            dialogue.StartDialogue(prevNode);
+        }
 
     }
 
