@@ -1,91 +1,221 @@
 [
 	{
-		"title": "date",
+		"title": "start",
 		"tags": "",
-		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite YunSprite flustered>>\n    Yun: (Holy shit!!)\n    Yun: (This is actually happening.)\n    Yun: (Okay, okay, calm down...)\n    Yun: (Gotta take it easy or she'll think I'm a creep...)\n    <<setsprite YunSprite flirty>>\n<<else>>\n    Yun: I'M SORRY!!\n    Yun: (WHAT THE FUCK WAS I THINKING)\n    Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n<<endif>>\n\n[[Nice date, huh?|1A]]\n[[Thanks for going out with me!!|1B]]",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<set $chance = true>>\n    <<setsprite YunSprite flustered>>\n    Yun: (Holy shit!!)\n    Yun: (This is actually happening.)\n    Yun: (Okay, okay, calm down...)\n    Yun: (Gotta take it easy or she'll think I'm a creep...)\n<<else>>\n    Yun: I'M SORRY!!\n    Yun: (WHAT THE FUCK WAS I THINKING)\n    Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n    Yun: (Okay, gotta take it easy...!!!)\n<<endif>>\n\n[[describe situation|1A]]\n[[express gratitude|1B]]",
 		"position": {
-			"x": 399,
-			"y": 54
+			"x": 397,
+			"y": 31
 		},
 		"colorID": 0
 	},
 	{
 		"title": "2A",
 		"tags": "",
-		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite YunSprite flirty>>\n    Noa: Uhm...\n    <<setsprite NoaSprite reallyconfused>>\n    Noa: What's a date?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OKAY I KNOW SHE'S SERIOUSLY SHELTERED BUT SERIOUSLY?)\n<<else>>\n    Noa: What were we talking about...?\n    Yun: NOT DATING.\n<<endif>>",
+		"body": "<<visit Dialogue>>\n<<set $chance = false>>\n<<setsprite YunSprite flirty>>\nYun: Yeah, date!!\nNoa: Uhm...\n<<setsprite NoaSprite reallyconfused>>\nNoa: What do you mean by, \"date?\"\nNoa: Come to think of it...\nNoa: I don't think it's something my mother would approve...\n<<setsprite YunSprite gayshocked>>\nYun: (OKAY I KNOW SHE'S SERIOUSLY SHELTERED BUT SERIOUSLY?)\n<<setsprite YunSprite grim>>\nYun: If you feel uncomfortable, you can always leave.\nYun: I don't ever want to make you feel uncomfortable.\n<<setsprite NoaSprite flustered>>\nNoa: No, it's not that-\nNoa: I'll...\n<<setsprite NoaSprite gayhappy>>\nNoa: I'll try my best.\n<<setsprite YunSprite gayshocked>>\nYun: (OH MY GOD SHE'S SO FUCKING CUTE!!!)\n<<setsprite YunSprite panic>>\nYun: (CALM the fuck down Yun, you got this.)\n<<setsprite YunSprite idle>>\nYun: (Just gotta test the waters a bit.)\n<<setsprite YunSprite flustered>>\nYun: (And then touch her hand when she gets it.)\nYun: (To make sure she really knows what I mean.)\n<<setsprite YunSprite grim>>\nYun: (Of course back off if she doesn't look like she's into me.)\nYun: (Since...apparently she didn't knowingly agree to this.)\nYun: (I should talk about some stuff to get to know her,\nYun: and try to convey her my feelings while doing that.)\nYun: (Since this is the first time we're even talking properly.)\n[[talk about hobbies|topicHobbies]]\n[[talk about love life|topicLovelife]]",
 		"position": {
-			"x": 362,
-			"y": 457
+			"x": 323,
+			"y": 526
 		},
 		"colorID": 0
 	},
 	{
 		"title": "2B",
 		"tags": "",
-		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite NoaSprite idle>>\n    Noa: Uh...okay!\n    <<setsprite YunSprite flustered>>\n    Yun: (Saved...I'm saved...)\n    <<setsprite YunSprite idle>>\n    Yun: (That's one thing I can thank her mom for, I guess.)\n<<else>>\n    Noa: What were we talking about?\n    Yun: HAHA YEAH. WHAT WERE WE TALKING ABOUT.\n<<endif>>",
+		"body": "<<visit Dialogue>>\n<<set $chance = false>>\n<<setsprite YunSprite gayshocked>>\nYun: Haha what are you talking about!!\n<<setsprite NoaSprite idle>>\nNoa: Uh...okay!\n<<setsprite YunSprite flustered>>\nYun: (Saved...I'm saved...)\nNoa: I'm still unsure if my mother would approve of this...\n<<setsprite YunSprite shocked>>\nYun: If you feel uncomfortable, you can always leave.\n<<setsprite YunSprite grim>>\nYun: I don't ever want to make you feel uncomfortable.\n<<setsprite NoaSprite flustered>>\nNoa: No, it's not that-\nNoa: I'll...\n<<setsprite NoaSprite gayhappy>>\nNoa: I'll try my best.\n<<setsprite YunSprite gayshocked>>\nYun: (OH MY GOD SHE'S SO FUCKING CUTE!!!)\n<<setsprite YunSprite panic>>\nYun: (CALM the fuck down Yun, you got this.)\n<<setsprite YunSprite idle>>\nYun: (Just gotta test the waters a bit.)\n<<setsprite YunSprite flustered>>\nYun: (And then touch her hand when she gets it.)\nYun: (To make sure she really knows what I mean.)\n<<setsprite YunSprite grim>>\nYun: (Of course back off if she doesn't look like she's into me.)\nYun: (Since...apparently she didn't knowingly agree to this.)\nYun: (I should talk about some stuff to get to know her,\nYun: and try to convey her my feelings while doing that.)\nYun: (Since this is the first time we're even talking properly.)\n[[talk about hobbies|topicHobbies]]\n[[talk about love life|topicLovelife]]",
 		"position": {
-			"x": 594,
-			"y": 461
+			"x": 798,
+			"y": 523
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Busted1",
 		"tags": "",
-		"body": "<<setsprite NoaSprite confused>>\nNoa: Uhm...\nNoa: What are you doing?\n<<setsprite YunSprite panic>>\nYun: N-nothing!!\n<<setsprite YunSprite gayshocked>>\nYun: I'm doing nothing!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
+		"body": "<<visit Dialogue>>\n<<setsprite NoaSprite confused>>\nNoa: Uhm...\nNoa: What are you doing?\n<<setsprite YunSprite panic>>\nYun: N-nothing!!\n<<setsprite YunSprite gayshocked>>\nYun: I'm doing nothing!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
 		"position": {
-			"x": 50,
-			"y": 86
+			"x": -470,
+			"y": -23
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Busted2",
 		"tags": "",
-		"body": "<<setsprite NoaSprite confused>>\nNoa: I'm not sure what you're trying to do...\n<<setsprite YunSprite gayshocked>>\nYun: HAHA ME NEITHER!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
+		"body": "<<visit Dialogue>>\n<<setsprite NoaSprite confused>>\nNoa: I'm not sure what you're trying to do...\n<<setsprite YunSprite gayshocked>>\nYun: HAHA ME NEITHER!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
 		"position": {
-			"x": 32,
-			"y": 307
+			"x": -471,
+			"y": 199
 		},
 		"colorID": 0
 	},
 	{
 		"title": "Busted3",
 		"tags": "",
-		"body": "<<setsprite NoaSprite reallyconfused>>\nNoa: ...I think I'm going to go home...\nNoa: I'm not sure what you're trying to do,\nNoa: And I'm happy we got to hung out but...\n<<setsprite NoaSprite sad>>\nNoa: I'll see you.\n<<setsprite YunSprite shocked>>\nYun: No, wait!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
+		"body": "<<visit Dialogue>>\n<<setsprite NoaSprite reallyconfused>>\nNoa: ...I think I'm going to go home...\nNoa: I'm not sure what you're trying to do,\nNoa: and I'm happy we got to hung out but...\n<<setsprite NoaSprite sad>>\nNoa: I think my mother would be looking for me now.\nNoa: I'll see you.\n<<setsprite YunSprite shocked>>\nYun: Ah...!\nYun: I'm sorry...\nYun: (Damn... I fucked up.)\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
 		"position": {
-			"x": 33,
-			"y": 537
+			"x": -533,
+			"y": 483
 		},
 		"colorID": 0
 	},
 	{
 		"title": "1A",
 		"tags": "",
-		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    Yun: Hey, nice date, huh?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (HOLY FUCK WHO SAYS THAT)\n    <<setsprite NoaSprite confused>>\n    Noa: Date?\n    <<setsprite YunSprite confused>>\n    Yun: (Oh.)\n    <<setsprite YunSprite shocked>>\n    Yun: (Oh no.)\n    <<setsprite YunSprite flustered>>\n    Yun: (She's cute when she's confused but-\n    <<setsprite YunSprite gayshocked>>\n    Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n    <<setsprite YunSprite confused>>\n    Yun: (DID I MAKE IT CLEAR?)\n    <<setsprite YunSprite flustered>>\n    Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n<<else>>\n    Yun: I'M SORRY!!\n    Yun: (WHAT THE FUCK WAS I THINKING)\n    Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n    Yun: (SHE DOESN'T EVEN KNOW THAT THIS IS A DATE)\n    Noa: So...what's a date?\n<<endif>>\n\n[[Yeah, date!!|2A]]\n[[Haha what are you talking about|2B]]\n[[NICE JOKE DUDE|2C]]",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<set $chance = true>>\n    <<setsprite YunSprite flirty>>\n    Yun: Hey, nice date, huh?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (HOLY FUCK WHO SAYS THAT)\n    <<setsprite NoaSprite confused>>\n    Noa: Date?\n    <<set $1acheckpoint = true>>\n    <<setsprite YunSprite confused>>\n    Yun: (Oh.)\n    <<setsprite YunSprite shocked>>\n    Yun: (Oh no.)\n    <<setsprite YunSprite flustered>>\n    Yun: (She's cute when she's confused but-\n    <<setsprite YunSprite gayshocked>>\n    Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n    <<setsprite YunSprite confused>>\n    Yun: (DID I MAKE IT CLEAR?)\n    <<setsprite YunSprite flustered>>\n    Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n<<else>>\n    <<if $1bcheckpoint is true>>\n        Yun: I'M SORRY!!\n        Yun: (WHAT THE FUCK WAS I THINKING)\n        Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n        Yun: (SHE DOESN'T EVEN KNOW THAT THIS IS A DATE)\n        Noa: So...what's a date?\n        Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n    <<else>>\n        Yun: I'M SORRY!!\n        Yun: (WHAT THE FUCK WAS I THINKING)\n        Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n        Noa: So...what's a date?\n        <<setsprite YunSprite confused>>\n        Yun: (Oh.)\n        <<setsprite YunSprite shocked>>\n        Yun: (Oh no.)\n        <<setsprite YunSprite flustered>>\n        Yun: (She's cute when she's confused but-\n        <<setsprite YunSprite gayshocked>>\n        Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n        <<setsprite YunSprite confused>>\n        Yun: (DID I MAKE IT CLEAR?)\n        <<setsprite YunSprite flustered>>\n        Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n        <<endif>>\n<<endif>>\n\n[[confirm date|2A]]\n[[joke strategically|2B]]",
 		"position": {
-			"x": 758,
-			"y": 70
-		},
-		"colorID": 0
-	},
-	{
-		"title": "2C",
-		"tags": "",
-		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite NoaSprite sad>>\n    Noa: Joke...?\n    Noa: I don't think...I was joking.\n    <<setsprite YunSprite flustered>>\n    Yun: (Oh shit oh shit.)\n    <<setsprite YunSprite idle>>\n    Yun: Sorry, I didn't mean that.\n<<else>>\n    Noa: What were we talking about?\n    Yun: JOKES!! WE WERE JOKING!!\n<<endif>>",
-		"position": {
-			"x": 835,
-			"y": 442
+			"x": 631,
+			"y": 253
 		},
 		"colorID": 0
 	},
 	{
 		"title": "1B",
 		"tags": "",
-		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    Yun: Thanks for going out with me!!\n    <<setsprite YunSprite gayshocked>>\n    Yun: (HOLY FUCK WHO SAYS THAT)\n    <<setsprite NoaSprite confused>>\n    Noa: Going out?\n    Noa: Is it something special?\n    <<setsprite YunSprite confused>>\n    Yun: (Oh.)\n    <<setsprite YunSprite shocked>>\n    Yun: (Oh no.)\n    <<setsprite YunSprite flustered>>\n    Yun: (She's cute when she's confused but-\n    <<setsprite YunSprite gayshocked>>\n    Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n    <<setsprite YunSprite confused>>\n    Yun: (DID I MAKE IT CLEAR?)\n    <<setsprite YunSprite flustered>>\n    Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n<<else>>\n    Yun: I'M SORRY!!\n    Yun: (WHAT THE FUCK WAS I THINKING)\n    Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n    Yun: (SHE DOESN'T EVEN KNOW THAT THIS IS A DATE)\n    Noa: So...what's a date?\n<<endif>>\n\n[[Yeah, date!!|2A]]\n[[Haha what are you talking about|2B]]\n[[NICE JOKE DUDE|2C]]",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<set $chance = true>>\n    <<setsprite YunSprite idle>>\n    Yun: Thanks for going out with me!!\n    <<setsprite YunSprite gayshocked>>\n    Yun: (HOLY FUCK WHO SAYS THAT)\n    <<setsprite NoaSprite confused>>\n    Noa: Going out?\n    Noa: Is it something special?\n    <<set $1bcheckpoint = true>>\n    <<setsprite YunSprite confused>>\n    Yun: (Oh.)\n    <<setsprite YunSprite shocked>>\n    Yun: (Oh no.)\n    <<setsprite YunSprite flustered>>\n    Yun: (She's cute when she's confused but-\n    <<setsprite YunSprite gayshocked>>\n    Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n    <<setsprite YunSprite confused>>\n    Yun: (DID I MAKE IT CLEAR?)\n    <<setsprite YunSprite flustered>>\n    Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n<<else>>\n    <<if $1bcheckpoint is true>>\n        Yun: I'M SORRY!!\n        Yun: (WHAT THE FUCK WAS I THINKING)\n        Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n        Yun: (SHE DOESN'T EVEN KNOW THAT THIS IS A DATE)\n        Noa: So...what did you mean by \"going out?\"\n        Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW?)\n    <<else>>\n        Yun: I'M SORRY!!\n        Yun: (WHAT THE FUCK WAS I THINKING)\n        Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n        <<setsprite NoaSprite confused>>\n        Noa: So...what did you mean by \"going out?\"\n        Noa: Is it something special?\n        <<setsprite YunSprite shocked>>\n        Yun: (Oh no.)\n        <<setsprite YunSprite flustered>>\n        Yun: (She's cute when she's confused but-\n        <<setsprite YunSprite gayshocked>>\n        Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n        <<setsprite YunSprite confused>>\n        Yun: (DID I MAKE IT CLEAR?)\n        <<setsprite YunSprite flustered>>\n        Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n    <<endif>>\n<<endif>>\n\n[[confirm date|2A]]\n[[joke strategically|2B]]",
 		"position": {
-			"x": 436,
-			"y": 243
+			"x": 331,
+			"y": 247
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicHobbies",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<set $chance = false>>\n<<setsprite Yun flustered>>\nYun: So...any hobbies?\n<<setsprite Noa happy>>\nNoa: Yes!\nNoa: I love reading books.\n<<setsprite Yun gayshocked>>\nYun: (I HATE BOOKS!!)\n\n[[hate books|topicHobbies1A]]\n[[love books|topicHobbies1B]]",
+		"position": {
+			"x": -94,
+			"y": 771
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicLovelife",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<set $chance = false>>\n<<setsprite YunSprite flustered>>\nYun: So...have you gone out with anyone before?\nNoa: I...suppose I have.\n<<setsprite YunSprite shocked>>\nYun: You...you have?!\n<<setsprite YunSprite grim>>\nYun: Of...course you have.\n\n[[compliment her|topicLovelife1B]]\n[[pass it off|topicLovelife1A]]",
+		"position": {
+			"x": 989,
+			"y": 881
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicHobbies1A",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<setsprite YunSprite idle>> \nYun: I'm not a huge fan myself.\n<<setsprite YunSprite flustered>>\nYun: I'm more of a...run around the gym gal.\n<<setsprite NoaSprite happy>>\nNoa: Yes, you seem very athletic!\nNoa: I saw you playing basketball with some kids at the youth center.\nNoa: You're very strong.\nNoa: There were some very big kids there but you scored every time.\n<<setsprite YunSprite shocked>>\nYun: (OH MY GOD SHE WAS WATCHING???)\n<<setsprite YunSprite gayshocked>>\nYun: (HOLY SHIT WAS SHE CHECKING ME OUT!!)\n\n[[ask to confirm|topicHobbies2A]]\n[[play it cool|topicHobbies2B]]\n",
+		"position": {
+			"x": -468,
+			"y": 833
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicHobbies1B",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<setsprite YunSprite grim>>\nYun: I love books.\nYun: I love words and stuff.\n<<setsprite YunSprite idle>>\nYun: Books and words are great.\n<<setsprite YunSprite flustered>>\nYun: You're great.\n<<setsprite NoaSprite confused>>\nNoa: Huh?\n<<setsprite YunSprite gayshocked>>\nYun: I MEAN... it's great that you're into books.\nYun: To be honest, I'm not really good at that stuff.\n<<setsprite YunSprite flustered>>\nYun: I'm more of a...run around the gym gal.\n<<setsprite NoaSprite happy>>\nNoa: Yes, you seem very athletic!\nNoa: I saw you playing basketball with some kids at the youth center.\nNoa: You're very strong.\nNoa: There were some very big kids there but you scored every time.\n<<setsprite YunSprite shocked>>\nYun: (OH MY GOD SHE WAS WATCHING???)\n<<setsprite YunSprite gayshocked>>\nYun: (HOLY SHIT WAS SHE CHECKING ME OUT!!)\n\n[[ask to confirm|topicHobbies2A]]\n[[play it cool|topicHobbies2B]]\n",
+		"position": {
+			"x": 245,
+			"y": 856
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicHobbies2A",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<setsprite YunSprite flirty>>\nYun: Were you...checking me out?\n<<setsprite NoaSprite confused>>\nNoa: Checking you out?\nYun: (OF COURSE IT'S NOT GOING TO BE THAT EASY)\nYun: I mean...\n<<setsprite YunSprite flustered>>\nYun: I can play basketball more.\nYun: If you'd like.\nYun: Keep coming to the youth center!!\n<<setsprite NoaSprite sad>>\nNoa: Oh...\nNoa: I'd love to, but...\nNoa: That all depends on my mother.\n<<setsprite YunSprite angry>>\nYun: Hey.\n\n[[confront her about her mom|topicHobbies3A]]\n[[try to be flexible|topicHobbies3B]]",
+		"position": {
+			"x": -569,
+			"y": 1088
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicHobbies2B",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<setsprite YunSprite flustered>>\nYun: I can play basketball more.\nYun: If you'd like.\nYun: Keep coming to the youth center!!\n<<setsprite NoaSprite sad>>\nNoa: Oh...\nNoa: I'd love to, but...\nNoa: That all depends on my mother.\n<<setsprite YunSprite angry>>\nYun: Hey.\n\n[[confront her about her mom|topicHobbies3A]]\n[[try to be flexible|topicHobbies3B]]\n",
+		"position": {
+			"x": -164,
+			"y": 1090
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicHobbies3A",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<set $chance = true>>\n    <<setsprite YunSprite grim>>\n    Yun: Your mom doesn't control your life, you know?\n    Yun: You make your own decisions.\n    <<setsprite NoaSprite sad>>\n    Noa: I...\n    Noa: You're right, but I can't.\n    Noa: I just...can't.\n    Yun: Oh...\n    Yun: I see.\n<<else>>\n    <<setsprite YunSprite grim>>\n    Yun: (I shouldn't have tried to touch her hand...)\n    Yun: (Not the right mood, it's too serious.)\n    Noa: What were we talking about...?\n    Yun: Your mom, she...\n    Yun: She doesn't control your life, you know?\n    Yun: You make your own decisions.\n    Noa: I...\n    Noa: You're right, but I can't.\n    Noa: I just...can't.\n    Yun: Oh...\n    Yun: I see.\n<<endif>>\n\n<<setsprite NoaSprite reallyconfused>>\nNoa: ...I think I'm going to go home...\nNoa: I'm happy we got to hung out but...\n<<setsprite NoaSprite sad>>\nNoa: I think my mother would be looking for me now.\nNoa: I'll see you.\n<<setsprite YunSprite shocked>>\nYun: Ah...!\nYun: I'm sorry...\nYun: (Damn... I fucked up.)\nYun: (I shouldn't have butted in like that...)\n<<set $busted = 5>>\n",
+		"position": {
+			"x": -699,
+			"y": 1431
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicHobbies3B",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<set $chance = true>>\n    <<setsprite YunSprite grim>>\n    Yun: I can work with that.\n    Yun: You don't need to try hard on your own.\n    Yun: We can work something out.\n    <<setsprite NoaSprite sad>>\n    Noa: I...\n    <<setsprite NoaSprite happy>>\n    Noa: Thank you.\n    Noa: I want to keep coming to the youth center.\n    Noa: I'm sure my mother's going to keep going, so...\n    Noa: I'll do my best to come along with her.\n    Noa: To see you.\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OH SHIT!!!)\n    <<setsprite YunSprite flustered>>\n    Yun: Yeah, I'd like to see you more, too!\n    <<setsprite NoaSprite flustered>>\n    Yun: I really like you, you know?\n    Yun: It's the whole reason I asked you out.\n    Yun: I think you're really cute.\n<<else>>\n    <<setsprite YunSprite grim>>\n    Yun: (I shouldn't have tried to touch her hand...)\n    Yun: (Not the right mood, it's too serious.)\n    Noa: What were we talking about...?\n    Yun: That you don't need to try hard on your own.\n    Yun: We can work something out.\n    <<setsprite NoaSprite sad>>\n    Noa: I...\n    <<setsprite NoaSprite happy>>\n    Noa: Thank you.\n    Noa: I want to keep coming to the youth center.\n    Noa: I'm sure my mother's going to keep going, so...\n    Noa: I'll do my best to come along with her.\n    Noa: To see you.\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OH SHIT!!!)\n    <<setsprite YunSprite flustered>>\n    Yun: Yeah, I'd like to see you more, too!\n    <<setsprite NoaSprite flustered>>\n    Yun: I really like you, you know?\n    Yun: It's the whole reason I asked you out.\n    Yun: I think you're really cute.\n<<endif>>\n\n<<setsprite NoaSprite confused>>\nNoa: Oh...\n<<set $gettingthehint = 1>>\n<<set $chance = true>>\n<<setsprite NoaSprite flustered>>\nNoa: Oh.",
+		"position": {
+			"x": -219,
+			"y": 1453
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GotTheHint",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<setsprite YunSprite flustered>>\nYun: (I...hope I read it right this time.)\nYun: Is this fine?\n<<setsprite NoaSprite flustered>>\nNoa: I'm...so sorry.\nNoa: I've been so dense.\nNoa: Yes, it's fine-\n<<setsprite NoaSprite happy>>\nNoa: Actually...\n<<setsprite NoaSprite gayhappy>>\nNoa: I'd like to ask you out.\n<<setsprite NoaSprite flustered>>\nNoa: Since I flopped the first time...\n<<setsprite NoaSprite idle>>\nNoa: It's the least I could do, since it's mutual.\n<<setsprite YunSprite flustered>>\nYun: !!!\n<<setsprite YunSprite gayshocked>>\nYun: (OH MY GOD!!!!!!!)\n<<setsprite YunSprite flustered>>\nYun: Sure thing.\n<<setsprite NoaSprite gayhappy>>\nNoa: ...Will you go out with me, Yun?\n\n[[YEAH|askedout]]\n[[HELL YEAH|askedout]]\n[[FUCK YEAH|askedout]]",
+		"position": {
+			"x": 292,
+			"y": 1318
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicLovelife1B",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<set $chance = true>>\n<<if not $hasvisited>>\n    <<setsprite YunSprite flustered>>\n    Yun: A girl as pretty as you must've gone out with someone before...\n    Yun: Or maybe you're going out with someone already...\n    <<setsprite NoaSprite flustered>>\n    Noa: P...pretty?!\n    <<setsprite YunSprite gayshocked>>\n    Yun: Y-yeah!!\n    <<setsprite YunSprite flustered>>\n    Yun: It's the whole reason I asked you out.\n    Yun: I think you're really cute.\n    <<setsprite YunSprite grim>>\n    Yun: I didn't think to ask if you already had an S.O. though.\n    Yun: I'm sorry.\n    <<setsprite NoaSprite reallyconfused>>\n    Noa: S.O...?\n    Yun: ...Significant other...?\n    Noa: ...\n    Yun: ...\n    Noa: But I don't have...\n    <<setsprite YunSprite gayshocked>>\n    Yun: !! You don't have...!!\n<<else>>\n    <<setsprite YunSprite grim>>\n    Yun: (I shouldn't have tried to touch her hand...)\n    Yun: (Not the right mood, it's too serious.)\n    Noa: What were we talking about...?\n    Yun: <<setsprite YunSprite flustered>>\n    Yun: That I think you're pretty.\n    <<setsprite NoaSprite flustered>>\n    Noa: P...pretty?!\n    <<setsprite YunSprite gayshocked>>\n    Yun: Y-yeah!!\n    <<setsprite YunSprite flustered>>\n    Yun: It's the whole reason I asked you out.\n    Yun: I think you're really cute.\n    <<setsprite YunSprite grim>>\n    Yun: I didn't think to ask if you already had an S.O. though.\n    Yun: I'm sorry.\n    <<setsprite NoaSprite reallyconfused>>\n    Noa: S.O...?\n    Yun: ...Significant other...?\n    Noa: ...\n    Yun: ...\n    Noa: But I don't have...\n    <<setsprite YunSprite gayshocked>>\n    Yun: !! You don't have...!!\n<<endif>>\n\n<<setsprite NoaSprite confused>>\nNoa: Oh...\n<<set $gettingthehint = 1>>\n<<set $chance = true>>\n<<setsprite NoaSprite flustered>>\nNoa: Oh. I see.\n",
+		"position": {
+			"x": 1378,
+			"y": 948
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicLovelife1A",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<setsprite YunSprite grim>>\nYun: It's completely natural, right?\n<<setsprite NoaSprite reallyconfused>>\nNoa: Yes...?\n<<setsprite NoaSprite idle>>\nNoa: I suppose going out for walks with my dog is natural.\n<<setsprite YunSprite gayshocked>>\nYun: (I'VE BEEN DEFEATED...BY A DOG.)\n<<setsprite NoaSprite happy>>\nNoa: You're the first one I've gone out with, outside of my dog.\n<<setsprite NoaSprite sad>>\n<<setsprite YunSprite grim>>\nNoa: My mother doesn't allow me to get out often...\nNoa: I...\nNoa: I really shouldn't be here in the first place.\nNoa: My mother won't approve.\nNoa: If she finds out that I'm here and not back at the youth center...\n<<setsprite YunSprite angry>>\nYun: Hey.\n\n[[confront her about her mom|topicLovelife2A]]\n[[try to be flexible|topicLovelife2B]]",
+		"position": {
+			"x": 600,
+			"y": 997
+		},
+		"colorID": 0
+	},
+	{
+		"title": "askedout",
+		"tags": "",
+		"body": "<<set $askedout = true>>",
+		"position": {
+			"x": 373,
+			"y": 1550
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicLovelife2A",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<set $chance = true>>\n    <<setsprite YunSprite grim>>\n    Yun: Your mom doesn't control your life, you know?\n    Yun: You make your own decisions.\n    <<setsprite NoaSprite sad>>\n    Noa: I...\n    Noa: You're right, but I can't.\n    Noa: I just...can't.\n    Yun: Oh...\n    Yun: I see.\n<<else>>\n    <<setsprite YunSprite grim>>\n    Yun: (I shouldn't have tried to touch her hand...)\n    Yun: (Not the right mood, it's too serious.)\n    Noa: What were we talking about...?\n    Yun: Your mom, she...\n    Yun: She doesn't control your life, you know?\n    Yun: You make your own decisions.\n    Noa: I...\n    Noa: You're right, but I can't.\n    Noa: I just...can't.\n    Yun: Oh...\n    Yun: I see.\n<<endif>>\n\n<<setsprite NoaSprite reallyconfused>>\nNoa: ...I think I'm going to go home...\nNoa: I'm happy we got to hung out but...\n<<setsprite NoaSprite sad>>\nNoa: I think my mother would be looking for me now.\nNoa: I'll see you.\n<<setsprite YunSprite shocked>>\nYun: Ah...!\nYun: I'm sorry...\nYun: (Damn... I fucked up.)\nYun: (I shouldn't have butted in like that...)\n<<set $busted = 5>>",
+		"position": {
+			"x": 646,
+			"y": 1274
+		},
+		"colorID": 0
+	},
+	{
+		"title": "topicLovelife2B",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<set $chance = true>>\n    <<setsprite YunSprite grim>>\n    Yun: I can work with that.\n    Yun: You don't need to try hard on your own.\n    Yun: We can work something out.\n    <<setsprite NoaSprite sad>>\n    Noa: I...\n    <<setsprite NoaSprite happy>>\n    Noa: Thank you.\n    Noa: I want to keep coming to the youth center.\n    Noa: I'm sure my mother's going to keep going, so...\n    Noa: I'll do my best to come along with her.\n    Noa: To see you.\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OH SHIT!!!)\n    <<setsprite YunSprite flustered>>\n    Yun: Yeah, I'd like to see you more, too!\n    <<setsprite NoaSprite flustered>>\n    Yun: I really like you, you know?\n    Yun: It's the whole reason I asked you out.\n    Yun: I think you're really cute.\n<<else>>\n    <<setsprite YunSprite grim>>\n    Yun: (I shouldn't have tried to touch her hand...)\n    Yun: (Not the right mood, it's too serious.)\n    Noa: What were we talking about...?\n    Yun: That you don't need to try hard on your own.\n    Yun: We can work something out.\n    <<setsprite NoaSprite sad>>\n    Noa: I...\n    <<setsprite NoaSprite happy>>\n    Noa: Thank you.\n    Noa: I want to keep coming to the youth center.\n    Noa: I'm sure my mother's going to keep going, so...\n    Noa: I'll do my best to come along with her.\n    Noa: To see you.\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OH SHIT!!!)\n    <<setsprite YunSprite flustered>>\n    Yun: Yeah, I'd like to see you more, too!\n    <<setsprite NoaSprite flustered>>\n    Yun: I really like you, you know?\n    Yun: It's the whole reason I asked you out.\n    Yun: I think you're really cute.\n<<endif>>\n\n<<setsprite NoaSprite confused>>\nNoa: Oh...\n<<set $gettingthehint = 1>>\n<<set $chance = true>>\n<<setsprite NoaSprite flustered>>\nNoa: Oh.",
+		"position": {
+			"x": 1054,
+			"y": 1220
 		},
 		"colorID": 0
 	}

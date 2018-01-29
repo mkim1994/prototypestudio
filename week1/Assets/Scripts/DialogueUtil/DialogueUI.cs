@@ -75,8 +75,11 @@ public class DialogueUI : DialogueUIBehaviour
     /// dialogue is active and to restore them when dialogue ends
     public RectTransform gameControlsContainer;
 
+    private float spacing;
+
     void Awake()
     {
+        spacing = 27f;
         // Start by hiding the container, line and option buttons
         if (dialogueContainer != null)
             dialogueContainer.SetActive(false);
@@ -106,6 +109,11 @@ public class DialogueUI : DialogueUIBehaviour
             if(optionButtons[j].gameObject.activeSelf){
                 activeOptions++;
             }
+
+        }
+        spacing = 27.3f + activeOptions*3f;
+        if(activeOptions > 0){
+            optionButtons[0].transform.parent.GetComponent<VerticalLayoutGroup>().spacing = spacing;
         }
         for (int i = 0; i < activeOptions; ++i)
         {

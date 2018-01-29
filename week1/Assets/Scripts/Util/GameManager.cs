@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour {
     public Camera currentCamera;
     public GameObject TestingScenes;
     public AudioController audioController;
+
+    public bool dateSuccess;
 	void Awake()
 	{
+        dateSuccess = false;
         TestingScenes.SetActive(false);
 		InitializeServices();
 	}

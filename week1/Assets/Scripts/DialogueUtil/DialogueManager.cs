@@ -49,14 +49,32 @@ public class DialogueManager : MonoBehaviour
                 storage.SetValue("$hasvisited", new Yarn.Value(false));
             }
         }*/
+        if ((int)storage.GetValue("$busted").AsNumber == 5)
+        {
+            dialogue.Stop();
+
+            Services.SceneStackManager.Swap<EndScreen>();
+        }
+        if(storage.GetValue("$askedout").AsBool){
+            dialogue.Stop();
+            Services.GameManager.dateSuccess = true;
+            Services.SceneStackManager.Swap<EndScreen>();
+        }
     }
 
     void HandTouchedEvent(EventE e)
     {
-        int bustedVal = (int)storage.GetValue("$busted").AsNumber;
-        prevNode = dialogue.currentNodeName;
+        if ((int)storage.GetValue("$gettingthehint").AsNumber == 1)
+        {
+            dialogue.StartDialogue("GotTheHint");
+        }
+        else
+        {
+            int bustedVal = (int)storage.GetValue("$busted").AsNumber;
+            prevNode = dialogue.currentNodeName;
 
-        dialogue.StartDialogue("Busted" + bustedVal);
+            dialogue.StartDialogue("Busted" + bustedVal);
+        }
 
 
     }

@@ -5,8 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class EndScreen : Scene<TransitionData> {
 
+    public GameObject DateFailText;
+    public GameObject DateSuccessText;
 	void Start()
 	{
+        if(Services.GameManager.dateSuccess){
+            DateSuccessText.SetActive(true);
+            DateFailText.SetActive(false);
+        } else{
+            DateSuccessText.SetActive(false);
+            DateFailText.SetActive(true);
+        }
 	}
 
 	// Update is called once per frame

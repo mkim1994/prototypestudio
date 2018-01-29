@@ -1,0 +1,112 @@
+[
+	{
+		"title": "date",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite YunSprite flustered>>\n    Yun: (Holy shit!!)\n    <<setsprite YunSprite flirty>>\n<<else>>\n    Yun: I'M SORRY!!\n    Yun: (WHAT THE FUCK WAS I THINKING)\n    Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n<<endif>>\n\n[[(Hobbies!!)|1A]]\n[[(Oh, what's up with her mom?)|1B]]",
+		"position": {
+			"x": 380,
+			"y": 7
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2A",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite YunSprite flirty>>\n    Noa: Uhm...\n    <<setsprite NoaSprite reallyconfused>>\n    Noa: What's a date?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (OKAY I KNOW SHE'S SERIOUSLY SHELTERED BUT SERIOUSLY?)\n<<else>>\n    Noa: What were we talking about...?\n    Yun: NOT DATING.\n<<endif>>",
+		"position": {
+			"x": 362,
+			"y": 457
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2B",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite NoaSprite idle>>\n    Noa: Uh...okay!\n    <<setsprite YunSprite flustered>>\n    Yun: (Saved...I'm saved...)\n    <<setsprite YunSprite idle>>\n    Yun: (That's one thing I can thank her mom for, I guess.)\n<<else>>\n    Noa: What were we talking about?\n    Yun: HAHA YEAH. WHAT WERE WE TALKING ABOUT.\n<<endif>>",
+		"position": {
+			"x": 594,
+			"y": 461
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Busted1",
+		"tags": "",
+		"body": "<<setsprite NoaSprite confused>>\nNoa: Uhm...\nNoa: What are you doing?\n<<setsprite YunSprite panic>>\nYun: N-nothing!!\n<<setsprite YunSprite gayshocked>>\nYun: I'm doing nothing!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
+		"position": {
+			"x": 50,
+			"y": 86
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Busted2",
+		"tags": "",
+		"body": "<<setsprite NoaSprite confused>>\nNoa: I'm not sure what you're trying to do...\n<<setsprite YunSprite gayshocked>>\nYun: HAHA ME NEITHER!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
+		"position": {
+			"x": 32,
+			"y": 307
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Busted3",
+		"tags": "",
+		"body": "<<setsprite NoaSprite reallyconfused>>\nNoa: ...I think I'm going to go home...\nNoa: I'm not sure what you're trying to do,\nNoa: And I'm happy we got to hung out but...\n<<setsprite NoaSprite sad>>\nNoa: I'll see you.\n<<setsprite YunSprite shocked>>\nYun: No, wait!!\n<<set $busted = $busted + 1>>\n<<rejecthand Dialogue>>",
+		"position": {
+			"x": 33,
+			"y": 537
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1A",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    Yun: Hey, nice date, huh?\n    <<setsprite YunSprite gayshocked>>\n    Yun: (HOLY FUCK WHO SAYS THAT)\n    <<setsprite NoaSprite confused>>\n    Noa: Date?\n    <<setsprite YunSprite confused>>\n    Yun: (Oh.)\n    <<setsprite YunSprite shocked>>\n    Yun: (Oh no.)\n    <<setsprite YunSprite flustered>>\n    Yun: (She's cute when she's confused but-\n    <<setsprite YunSprite gayshocked>>\n    Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n    <<setsprite YunSprite confused>>\n    Yun: (DID I MAKE IT CLEAR?)\n    <<setsprite YunSprite flustered>>\n    Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n<<else>>\n    Yun: I'M SORRY!!\n    Yun: (WHAT THE FUCK WAS I THINKING)\n    Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n    Yun: (SHE DOESN'T EVEN KNOW THAT THIS IS A DATE)\n    Noa: So...what's a date?\n<<endif>>\n\n[[Yeah, date!!|2A]]\n[[Haha what are you talking about|2B]]\n[[NICE JOKE DUDE|2C]]",
+		"position": {
+			"x": 758,
+			"y": 70
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2C",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    <<setsprite NoaSprite sad>>\n    Noa: Joke...?\n    Noa: I don't think...I was joking.\n    <<setsprite YunSprite flustered>>\n    Yun: (Oh shit oh shit.)\n    <<setsprite YunSprite idle>>\n    Yun: Sorry, I didn't mean that.\n<<else>>\n    Noa: What were we talking about?\n    Yun: JOKES!! WE WERE JOKING!!\n<<endif>>",
+		"position": {
+			"x": 835,
+			"y": 442
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1B",
+		"tags": "",
+		"body": "<<visit Dialogue>>\n<<if not $hasvisited>>\n    Yun: Thanks for going out with me!!\n    <<setsprite YunSprite gayshocked>>\n    Yun: (HOLY FUCK WHO SAYS THAT)\n    <<setsprite NoaSprite confused>>\n    Noa: Going out?\n    Noa: Is it something special?\n    <<setsprite YunSprite confused>>\n    Yun: (Oh.)\n    <<setsprite YunSprite shocked>>\n    Yun: (Oh no.)\n    <<setsprite YunSprite flustered>>\n    Yun: (She's cute when she's confused but-\n    <<setsprite YunSprite gayshocked>>\n    Yun: -I DON'T THINK SHE KNOWS THAT THIS IS A DATE?)\n    <<setsprite YunSprite confused>>\n    Yun: (DID I MAKE IT CLEAR?)\n    <<setsprite YunSprite flustered>>\n    Yun: (SHOULD I MAKE IT CLEAR RIGHT NOW...??)\n<<else>>\n    Yun: I'M SORRY!!\n    Yun: (WHAT THE FUCK WAS I THINKING)\n    Yun: (I CAN'T BE THAT BOLD RIGHT NOW)\n    Yun: (SHE DOESN'T EVEN KNOW THAT THIS IS A DATE)\n    Noa: So...what's a date?\n<<endif>>\n\n[[Yeah, date!!|2A]]\n[[Haha what are you talking about|2B]]\n[[NICE JOKE DUDE|2C]]",
+		"position": {
+			"x": 436,
+			"y": 243
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1C",
+		"tags": "",
+		"body": "Empty Text",
+		"position": {
+			"x": 244,
+			"y": 253
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1D",
+		"tags": "",
+		"body": "Empty Text",
+		"position": {
+			"x": 580,
+			"y": 110
+		},
+		"colorID": 0
+	}
+]
