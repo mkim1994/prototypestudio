@@ -9,6 +9,7 @@ public class EndScreen : Scene<TransitionData> {
     public GameObject DateSuccessText;
 	void Start()
 	{
+        Cursor.visible = true;
         if(Services.GameManager.dateSuccess){
             DateSuccessText.SetActive(true);
             DateFailText.SetActive(false);

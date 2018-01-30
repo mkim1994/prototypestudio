@@ -11,6 +11,7 @@ public class Main : Scene<TransitionData> {
     public DialogueRunner dialogue;
 	void Start () {
         Services.GameManager.audioController.bgm.Play();
+        Cursor.visible = false;
 
 	}
 	
