@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{00490FFD-0372-CB25-789C-6F4C34DB4C9B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Util/SceneManagement/SceneStackManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TrunkControl.cs">
     <Files>
       <File FileName="Assets/Scripts/Util/GameManager.cs" Line="45" Column="1" />
       <File FileName="Assets/Scripts/Util/SceneManagement/SceneStackManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TrunkControl.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.week2 PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

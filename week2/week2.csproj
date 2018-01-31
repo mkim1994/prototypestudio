@@ -406,6 +406,7 @@
     <Compile Include="Assets\Scripts\DialogueUtil\SpriteSwitcher.cs" />
     <Compile Include="Assets\Scripts\SceneScript\Main.cs" />
     <Compile Include="Assets\Scripts\SceneScript\TitleScreen.cs" />
+    <Compile Include="Assets\Scripts\TrunkControl.cs" />
     <Compile Include="Assets\Scripts\Util\AudioController.cs" />
     <Compile Include="Assets\Scripts\Util\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Util\Easing.cs" />
