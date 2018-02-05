@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
@@ -17,8 +19,12 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
+        DOTween.Init();
+        Cursor.lockState = CursorLockMode.Locked;
 		//Services.EventManager.Register<Reset>(Reset);
 		Services.SceneStackManager.PushScene<TitleScreen>();
+        GameObject.FindWithTag("Fade").GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        GameObject.FindWithTag("Fade").GetComponent<Image>().DOFade(0f, 1f);
 	}
 
 	// Update is called once per frame

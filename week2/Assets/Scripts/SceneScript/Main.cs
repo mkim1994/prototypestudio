@@ -9,7 +9,6 @@ public class Main : Scene<TransitionData> {
 	// Use this for initialization
 	void Start () {
 
-
 	}
 	
 	// Update is called once per frame

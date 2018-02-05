@@ -13,6 +13,9 @@ public static class Services {
 
     public static Main Main { get; set; }
     public static TitleScreen TitleScreen { get; set; }
+    public static Main2 Main2 { get; set; }
+    public static Main3 Main3 { get; set; }
+    public static Main4 Main4 { get; set; }
 
 
 }
