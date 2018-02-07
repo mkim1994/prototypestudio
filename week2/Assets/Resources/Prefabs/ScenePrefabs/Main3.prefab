@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 135695438770619952}
   - component: {fileID: 23085012747609456}
   - component: {fileID: 54973964978871732}
+  - component: {fileID: 114366133471180874}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -141,6 +142,7 @@ GameObject:
   - component: {fileID: 135978499817998950}
   - component: {fileID: 23346734869616140}
   - component: {fileID: 54911749113173556}
+  - component: {fileID: 114538561550657030}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -401,6 +403,7 @@ GameObject:
   - component: {fileID: 135481650881599250}
   - component: {fileID: 23562266336526980}
   - component: {fileID: 54001543070208814}
+  - component: {fileID: 114539967029020006}
   m_Layer: 0
   m_Name: Sphere (2)
   m_TagString: Untagged
@@ -1868,6 +1871,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 1635694481498482}
+--- !u!114 &114366133471180874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071971979576194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5dc1b109024a4fd399320b0596a54e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114538561550657030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267554995350420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5dc1b109024a4fd399320b0596a54e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114539967029020006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1701366152413892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5dc1b109024a4fd399320b0596a54e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114606305288863164
 MonoBehaviour:
   m_ObjectHideFlags: 1

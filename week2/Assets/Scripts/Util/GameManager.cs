@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour {
 	void Start()
 	{
         DOTween.Init();
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+       // Cursor.lockState = CursorLockMode.Confined;
 		//Services.EventManager.Register<Reset>(Reset);
 		Services.SceneStackManager.PushScene<TitleScreen>();
         GameObject.FindWithTag("Fade").GetComponent<Image>().color = new Color(1, 1, 1, 1);

@@ -15,9 +15,14 @@ public class Tire : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update () {}
+
+    void FixedUpdate(){
+
+
+        GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(GetComponent<Rigidbody>().velocity,10f);
+    
+    }
 
     void OnTriggerEnter(Collider collider){
         if(collider.tag == "Goal"){
