@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject sceneRoot;
     public Camera currentCamera;
-    public GameObject TestingScenes;
 	void Awake()
 	{
-        TestingScenes.SetActive(false);
 		InitializeServices();
 	}
 
@@ -18,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	void Start()
 	{
 		//Services.EventManager.Register<Reset>(Reset);
-		Services.SceneStackManager.PushScene<TitleScreen>();
+		//Services.SceneStackManager.PushScene<TitleScreen>();
 	}
 
 	// Update is called once per frame
@@ -31,7 +28,8 @@ public class GameManager : MonoBehaviour {
         }
 
         if(Input.GetKeyUp(KeyCode.R)){
-            Services.SceneStackManager.Swap<TitleScreen>();
+          //  Services.SceneStackManager.Swap<TitleScreen>();
+            SceneManager.LoadScene("main");
         }
 	}
 
@@ -42,8 +40,7 @@ public class GameManager : MonoBehaviour {
 		Services.TaskManager = new TaskManager();
 		Services.Prefabs = Resources.Load<PrefabDB>("Prefabs/Prefabs");
         Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
-		Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
-		Services.InputManager = new InputManager();
+        Services.InputManager = new InputManager();
 
 
 	}
