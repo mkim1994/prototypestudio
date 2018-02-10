@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
@@ -14,8 +15,9 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start()
 	{
-		//Services.EventManager.Register<Reset>(Reset);
-		//Services.SceneStackManager.PushScene<TitleScreen>();
+        //Services.EventManager.Register<Reset>(Reset);
+        //Services.SceneStackManager.PushScene<TitleScreen>();
+        DOTween.Init();
 	}
 
 	// Update is called once per frame
