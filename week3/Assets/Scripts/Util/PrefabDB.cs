@@ -17,4 +17,16 @@ public class PrefabDB : ScriptableObject {
     private GameObject otherletter;
     public GameObject OtherLetter { get { return otherletter; } }
 
+    [SerializeField]
+    private GameObject panictext;
+    public GameObject PanicText { get { return panictext; } }
+
+    [SerializeField]
+    private GameObject thought;
+    public GameObject Thought { get { return thought; } }
+
+    [SerializeField]
+    private GameObject hiddenthought;
+    public GameObject HiddenThought { get { return hiddenthought; } }
+
 }

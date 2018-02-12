@@ -17,3 +17,7 @@ MonoBehaviour:
   letter: {fileID: 1439965762112416, guid: 22a27341f98cd4ac18fce7b09c1c2456, type: 2}
   otherletter: {fileID: 1439965762112416, guid: fc68314c7d5b343b089bf855fa1cb043,
     type: 2}
+  panictext: {fileID: 1338404249468566, guid: f52a592ae50ce45f787d1723d4cb9f82, type: 2}
+  thought: {fileID: 1668223630413254, guid: 9aa4cfc77d927436b9f739101b99690e, type: 2}
+  hiddenthought: {fileID: 1562674874840460, guid: 7e87badd66c6f4013bd367e56f4489ff,
+    type: 2}
