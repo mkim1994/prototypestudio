@@ -84,6 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   word: FRIEND
   enableOther: 0
+  rotateWords: 0
 --- !u!114 &114895987948171904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9b9bf1aab2d47d08aa789e2904ba8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderRadius: 40
+  wanderRadius: 10
   wanderTimer: 1
   panicthoughts:
   - oh god
