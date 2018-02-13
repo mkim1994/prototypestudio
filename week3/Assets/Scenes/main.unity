@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731b149e22d14416682924c25c1e7fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
+  radius: 15
   words:
   - FAMILY
   - FRIENDS

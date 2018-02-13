@@ -12,6 +12,8 @@ public class CameraControl : MonoBehaviour {
     public LayerMask other;
     private Camera cam;
 
+    public bool closedEyes;
+
     private GameObject topeye, bottomeye;
     public GameObject PanicCanvas;
 
@@ -30,7 +32,7 @@ public class CameraControl : MonoBehaviour {
         topeye = GameObject.FindWithTag("TopEye");
         bottomeye = GameObject.FindWithTag("BottomEye");
         originalEyePosY = topeye.transform.position.y;
-
+        closedEyes = false;
 
 	}
     void CloseEyes(){
@@ -53,6 +55,7 @@ public class CameraControl : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Tab)){ //animate eyes closing
             if (cam.cullingMask == everything)
             { // close eyes
+                closedEyes = true;
                 openSeq.Kill();
                 closeSeq = DOTween.Sequence();
                 closeSeq.Append(topeye.transform.DOLocalMoveY(0f, eyeTime));
@@ -67,6 +70,7 @@ public class CameraControl : MonoBehaviour {
             }
         }else if(Input.GetKeyUp(KeyCode.Tab)){
             //open eyes
+            closedEyes = false;
             closeSeq.Kill();
             openSeq= DOTween.Sequence();
             openSeq.Append(topeye.GetComponent<Image>().DOFade(1f, fadeTime));
