@@ -1,13 +1,17 @@
 ﻿<Properties StartupConfiguration="{0C67206B-3AFE-FF79-0AF6-BA74B7F1AA77}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChatManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Util/FadeCanvas.cs" Line="30" Column="1" />
-      <File FileName="Assets/Scripts/Util/GameManager.cs" Line="21" Column="3" />
-      <File FileName="Assets/Scripts/Util/Services.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/Util/SceneManagement/SceneStackManager.cs" Line="10" Column="14" />
-      <File FileName="Assets/Scripts/Util/PrefabDB.cs" Line="10" Column="1" />
-      <File FileName="Assets/Scripts/SceneScript/TitleScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ChatManager.cs" Line="38" Column="30" />
+      <File FileName="Assets/Scripts/Util/PrefabDB.cs" Line="29" Column="53" />
+      <File FileName="Assets/Scripts/ChatManager.cs" Line="59" Column="50" />
+      <File FileName="Assets/YarnSpinner/Code/DialogueRunner.cs" Line="87" Column="34" />
+      <File FileName="Assets/Scripts/DialogueUtil/DialogueUI.cs" Line="233" Column="22" />
+      <File FileName="Assets/Scripts/ScoreManager.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/InnerPlayer.cs" Line="60" Column="10" />
+      <File FileName="Assets/Scripts/InnerGameManager.cs" Line="18" Column="4" />
+      <File FileName="Assets/Scripts/Spawner.cs" Line="43" Column="18" />
+      <File FileName="Assets/Scripts/Ally.cs" Line="9" Column="34" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="9" Column="33" />
+      <File FileName="Assets/Scripts/SceneScript/Main.cs" Line="16" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

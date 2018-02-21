@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - IvoryNameBar
+  - Ground
+  - Ally
+  - Enemy
+  - ScoreManager
+  - OuterPlayer
+  - ScoreText
+  - InnerPlayer
+  - Dialogue
+  - OuterPlayer2
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -40,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ally
+    uniqueID: 583852255
     locked: 0

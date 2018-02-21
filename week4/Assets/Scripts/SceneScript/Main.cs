@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Yarn.Unity;
 
 public class Main : Scene<TransitionData> {
 
+    public GameObject ScrollingObj;
+    public ChatManager chatManager;
+    public DialogueRunner dialogue;
+
+    public ScoreManager score;
+    public GameObject result;
+
+    public GameObject panel;
 	// Use this for initialization
 	void Start () {
 

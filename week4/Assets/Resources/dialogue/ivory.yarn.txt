@@ -1,0 +1,337 @@
+title: Start0
+tags: 
+colorID: 0
+position: 287,117
+---
+<<set $positive to 0>>
+ivory: sup
+ivory: hey
+ivory: hey
+ivory: hey
+[[what's up|A1a]]
+[[what|A1b]]
+===
+title: A1a
+tags: 
+colorID: 0
+position: 607,-11
+---
+<<set $positive += 1>>
+me: what's up
+ivory: : D
+ivory: heyyyyyyy
+ivory: im not up to much
+ivory: just chilling
+ivory: and doing nothing
+ivory: what about u
+ivory: its been a while since we talked right?
+[[didn't we talk like two days ago|A2a]]
+[[I guess it has been|A2b]]
+===
+title: Start1
+tags: 
+colorID: 0
+position: -140,664
+---
+ivory: so
+ivory: are u playing games
+[[yeah|B1a]]
+[[no|B1b]]
+===
+title: A1b
+tags: 
+colorID: 0
+position: 595,248
+---
+me: what
+ivory: just wondering what ur up to
+ivory: its been a whlie since we talked
+[[didn't we talk like two days ago|A2a]]
+[[I guess it has been|A2b]]
+===
+title: A2a
+tags: 
+colorID: 0
+position: 938,-14
+---
+me: didn't we talk like two days ago
+ivory: uh
+ivory: yea
+ivory: im sorry.
+[[lol|A3a]]
+[[??? what for?|A3b]]
+===
+title: A2b
+tags: 
+colorID: 0
+position: 876,279
+---
+me: I guess it has been
+ivory: yea i just
+ivory: missing talking to u
+[[lol|A3a]]
+[[same|A5b]]
+===
+title: A3a
+tags: 
+colorID: 0
+position: 1259,-87
+---
+me: lol
+===
+title: A3b
+tags: 
+colorID: 0
+position: 1207,139
+---
+<<set $positive += 1>>
+me: ??? what for?
+ivory: its just
+ivory: nvmd
+ivory: idk yeah its only been two days but 
+ivory: we used to talk a lot more ukno
+[[you're right, I've been pretty off|A4a]]
+[[well we're talking now right|A4b]]
+===
+title: A4a
+tags: 
+colorID: 0
+position: 1527,49
+---
+<<set $positive += 1>>
+me: you're right, I'v been pretty off
+ivory: nooooo
+ivory: i didnt mean it like that
+ivory: ur good ur good
+ivory: haha
+===
+title: A4b
+tags: 
+colorID: 0
+position: 1538,300
+---
+me: well we're talking now right
+ivory: haha yea
+ivory: ur right
+ivory: we're talking 
+===
+title: A5b
+tags: 
+colorID: 0
+position: 1178,369
+---
+<<set $positive += 1>>
+me: same
+ivory: : D!!
+===
+title: B1a
+tags: 
+colorID: 0
+position: 161,501
+---
+me: yeah
+ivory: oh
+ivory: what are u playing this time
+[[super resident solid 4|B2a]]
+[[don't let them fall through|B2b]]
+===
+title: B1b
+tags: 
+colorID: 0
+position: 72,867
+---
+me: no
+ivory: oh
+ivory: thats new haha
+ivory: whatre u doing then
+[[nothing|B8a]]
+[[jk you got me lol. I'm playing a game right now|B8b]]
+===
+title: B2a
+tags: 
+colorID: 0
+position: 551,489
+---
+me: super resident solid 4
+ivory: sounds intense
+ivory: whats it abt
+[[same old stuff, shooting and shit|B3a]]
+[[lol i was joking|B3b]]
+===
+title: B2b
+tags: 
+colorID: 0
+position: 547,766
+---
+me: don't let them fall through
+ivory: hahahaha what
+ivory: what a weird title
+ivory: whats it abt
+[[lol you're not gonna play it anyway right|B4a]]
+[[just dodging stuff while trying to get points|B4b]]
+===
+title: Start2
+tags: 
+colorID: 0
+position: -433,1096
+---
+<<if $positive < 1>>
+    ivory: well
+    ivory: bye
+    ivory: i guess
+    ivory: [user has logged off.]
+<<endif>>
+
+<<if $positive > 0>>
+    <<if $positive < 5>>
+        ivory: nice talking to u
+        ivory: gnight then
+        ivory: [user has logged off.]
+    <<endif>>
+<<endif>>
+
+<<if $positive > 4>>
+    ivory: : ) thnx for taking the time to talk
+    ivory: i rly do appreciate it
+    ivory: bye!!
+    ivory: see u
+    ivory: [user has logged off.]
+<<endif>>
+
+<<set $gameover = true>>
+===
+title: B3a
+tags: 
+colorID: 0
+position: 878,498
+---
+<<set $positive += 1>>
+me: same old stuff, shooting and shit
+ivory: i see
+ivory: cool!!
+===
+title: B4a
+tags: 
+colorID: 0
+position: 883,757
+---
+me: lol you're not gonna play it anyway right
+ivory: i mean
+ivory: i guess
+ivory: : /
+===
+title: B3b
+tags: 
+colorID: 0
+position: 1212,651
+---
+me: lol i was joking
+ivory: oh
+ivory: hahat hats funny
+ivory: ukno uc ouldve kept going
+ivory: i wouldnt hve noticed
+ivory: since idk games
+[[lol|B5a]]
+[[yeah I know|B5b]]
+===
+title: B5a
+tags: 
+colorID: 0
+position: 1530,569
+---
+me: lol
+===
+title: B5b
+tags: 
+colorID: 0
+position: 1569,771
+---
+me: yeah I know
+ivory: haha
+===
+title: B4b
+tags: 
+colorID: 0
+position: 860,1010
+---
+<<set $positive += 1>>
+me: just dodging stuff while trying to get points
+ivory: sounds cool
+ivory: what are u dodging
+[[stuff|B6a]]
+[[triangles|B6b]]
+===
+title: B6a
+tags: 
+colorID: 0
+position: 1178,942
+---
+me: stuff
+===
+title: B6b
+tags: 
+colorID: 0
+position: 1141,1196
+---
+me: triangles
+ivory: what kinda triangles
+[[idk triangly kind|B7a]]
+[[cute ones|B7b]]
+===
+title: B7a
+tags: 
+colorID: 0
+position: 1429,1021
+---
+me: idk triangly kind
+ivory: haha
+ivory: triangly
+===
+title: B7b
+tags: 
+colorID: 0
+position: 1427,1271
+---
+<<set $positive += 1>>
+me: cute ones
+ivory: : D cute!!
+===
+title: B8a
+tags: 
+colorID: 0
+position: 238,1106
+---
+me: nothing
+ivory: ur doing nothing on ur computer?
+ivory: blasphemy
+[[lol|B9a]]
+[[yeah I know, crazy right|B9b]]
+===
+title: B9a
+tags: 
+colorID: 0
+position: 564,1027
+---
+me: lol
+===
+title: B9b
+tags: 
+colorID: 0
+position: 643,1262
+---
+<<set $positive += 1>>
+me: yeah I know, crazy right
+ivory: totally!!
+===
+title: B8b
+tags: 
+colorID: 0
+position: 196,1342
+---
+me: jk you got me lol. I'm playing a game right now
+ivory: ooooooohhhhhh
+ivory: i knew it
+ivory: whatre u playing : )
+[[super resident solid 4|B2a]]
+[[don't let them fall through|B2b]]
+===

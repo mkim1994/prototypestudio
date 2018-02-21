@@ -14,3 +14,9 @@ MonoBehaviour:
   scenes:
   - {fileID: 1478640791430904, guid: 6ed6ea1fc67f9442694d5393a0c81b3b, type: 2}
   - {fileID: 1478640791430904, guid: fcaf8a4f7305e4c7a96176d125b2bfd8, type: 2}
+  chatline: {fileID: 1953665978909110, guid: b711e270fb69543e1ac1276050b0641e, type: 2}
+  spawnerprefab: {fileID: 1000012893464008, guid: c659e2bf7af634229a62a0ec2547609f,
+    type: 2}
+  walls: {fileID: 1000012042625680, guid: 67acaf7c48883463f8d107b353f52b42, type: 2}
+  ally: {fileID: 1000011611116470, guid: b416a975fb24e431ebdd712ba67555cb, type: 2}
+  enemy: {fileID: 1000014203855164, guid: cbce74f7af1c148afa15818ae0f12e13, type: 2}

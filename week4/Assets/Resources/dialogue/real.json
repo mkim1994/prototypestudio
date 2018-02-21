@@ -1,0 +1,252 @@
+[
+	{
+		"title": "Start0",
+		"tags": "",
+		"body": "Hey.\n<<set $positive to 0>>\n[[What is it?|1a]]\n[[What?|1b]]",
+		"position": {
+			"x": 39,
+			"y": -237
+		},
+		"colorID": 0
+	},
+	{
+		"title": "No",
+		"tags": "",
+		"body": "",
+		"position": {
+			"x": -220,
+			"y": 2
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1a",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nWhat are you playing?\n\n[[Some...thing.|2a]]\n[[\"Don't Let Them Slip Through.\"|2b]]\n\n",
+		"position": {
+			"x": 288,
+			"y": -308
+		},
+		"colorID": 0
+	},
+	{
+		"title": "1b",
+		"tags": "",
+		"body": "<<set $positive -= 1>>\nWhat are you playing?\n\n[[Some...thing.|2a]]\n[[\"Don't Let Them Slip Through.\"|2b]]",
+		"position": {
+			"x": 300,
+			"y": -75
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2a",
+		"tags": "",
+		"body": "<<set $positive -= 1>>\n...Alright. What's it about?\n\n[[Just watch me play and find out?|3a]]\n[[I'm this circle thing and I dodge the triangles while trying to save the little guys.|3b]]",
+		"position": {
+			"x": 605,
+			"y": -342
+		},
+		"colorID": 0
+	},
+	{
+		"title": "2b",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nNever heard of it...What's it about?\n\n[[Just watch me play and find out?|3a]]\n[[I'm this circle thing and I dodge the triangles while trying to save the little guys.|3b]]",
+		"position": {
+			"x": 620,
+			"y": -71
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Start1",
+		"tags": "",
+		"body": "So...what have you been up to lately?\n\n[[You know, the same old. What about you?|4a]]\n[[Not much.|4b]]",
+		"position": {
+			"x": 1,
+			"y": 227
+		},
+		"colorID": 0
+	},
+	{
+		"title": "3a",
+		"tags": "",
+		"body": "<<set $positive -= 1>>\nOkay...",
+		"position": {
+			"x": 887,
+			"y": -360
+		},
+		"colorID": 0
+	},
+	{
+		"title": "3b",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nSounds cool. \n",
+		"position": {
+			"x": 881,
+			"y": -76
+		},
+		"colorID": 0
+	},
+	{
+		"title": "4a",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nOh, me? Same old too, I guess?\n\n[[Alright.|6a]]\n[[Yeah?|6b]]",
+		"position": {
+			"x": 314,
+			"y": 145
+		},
+		"colorID": 0
+	},
+	{
+		"title": "4b",
+		"tags": "",
+		"body": "<<set $positive -= 1>>\nOh, okay. You sure like that game though, huh?\n\n[[Not really.|5a]]\n[[Hell yeah.|5a]]",
+		"position": {
+			"x": 319,
+			"y": 364
+		},
+		"colorID": 0
+	},
+	{
+		"title": "5a",
+		"tags": "",
+		"body": "",
+		"position": {
+			"x": 575,
+			"y": 365
+		},
+		"colorID": 0
+	},
+	{
+		"title": "6a",
+		"tags": "",
+		"body": "<<set $positive -= 1>>",
+		"position": {
+			"x": 844,
+			"y": 149
+		},
+		"colorID": 0
+	},
+	{
+		"title": "6b",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nYeah. It's been kind of hard though.\n\n[[What's up?|7a]]\n[[Same.|6a]]",
+		"position": {
+			"x": 824,
+			"y": 386
+		},
+		"colorID": 0
+	},
+	{
+		"title": "7a",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nI'm just tired all the time I guess.\n\n[[Same.|6a]]\n[[What's wrong?|7b]]",
+		"position": {
+			"x": 1154,
+			"y": 296
+		},
+		"colorID": 0
+	},
+	{
+		"title": "7b",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nIt's nothing, really. Like I said, just tired.\n\n[[Okay.|6a]]\n[[Well, try to take care of yourself.|8a]]",
+		"position": {
+			"x": 1156,
+			"y": 9
+		},
+		"colorID": 0
+	},
+	{
+		"title": "8a",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nThanks.",
+		"position": {
+			"x": 1420,
+			"y": 26
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Start2",
+		"tags": "",
+		"body": "Well, I'm gonna head home now.\n\n[[Okay.|9a]]\n[[This soon?|9b]]",
+		"position": {
+			"x": -72,
+			"y": 638
+		},
+		"colorID": 0
+	},
+	{
+		"title": "9a",
+		"tags": "",
+		"body": "<<set $positive -= 1>>\nYep, see ya.\n\n[[Bye.|10a]]\n[[Yeah, catch you later.|10b]]",
+		"position": {
+			"x": 239,
+			"y": 636
+		},
+		"colorID": 0
+	},
+	{
+		"title": "10a",
+		"tags": "",
+		"body": "<<set $positive -= 1>>",
+		"position": {
+			"x": 1057,
+			"y": 515
+		},
+		"colorID": 0
+	},
+	{
+		"title": "10b",
+		"tags": "",
+		"body": "<<set $positive += 1>>",
+		"position": {
+			"x": 1066,
+			"y": 782
+		},
+		"colorID": 0
+	},
+	{
+		"title": "9b",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nYeah. Sorry, I just got shit to do.\n\n[[That blows.|11a]]\n[[Same.|11b]]",
+		"position": {
+			"x": 177,
+			"y": 1025
+		},
+		"colorID": 0
+	},
+	{
+		"title": "11a",
+		"tags": "",
+		"body": "<<set $positive += 1>>\nIt's cool. Anyways, see ya.\n\n[[Bye.|10a]]\n[[Yeah, catch you later.|10b]]",
+		"position": {
+			"x": 472,
+			"y": 875
+		},
+		"colorID": 0
+	},
+	{
+		"title": "11b",
+		"tags": "",
+		"body": "<<set $positive -= 1>>\nBye.\n\n[[Yeah, bye.|10a]]\n[[Yeah, catch you later.|10b]]",
+		"position": {
+			"x": 732,
+			"y": 1032
+		},
+		"colorID": 0
+	},
+	{
+		"title": "End",
+		"tags": "",
+		"body": "<<if $positive > 8>>\n[You hung out with your friend the next day.]\n<<else>>\n[Your friend didn't come over the next day.]\n<<endif>>",
+		"position": {
+			"x": -254,
+			"y": 976
+		},
+		"colorID": 0
+	}
+]

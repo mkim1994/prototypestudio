@@ -14,6 +14,8 @@ public class ButtonPressed : EventE {
     }
 }
 
+public class NewChatLineAdded : EventE{}
+
 public class Reset : EventE { }
 
 public class EventManager {

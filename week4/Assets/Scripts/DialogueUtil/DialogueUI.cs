@@ -46,10 +46,10 @@ public class DialogueUI : DialogueUIBehaviour
     /** This object will be enabled when conversation starts, and 
      * disabled when it ends.
      */
-    public GameObject dialogueContainer;
+    //public GameObject dialogueContainer;
 
     /// The UI element that displays lines
-    public Text lineText;
+    //public Text lineText;
 
     /// A UI element that appears after lines have finished appearing
     public GameObject continuePrompt;
@@ -70,13 +70,24 @@ public class DialogueUI : DialogueUIBehaviour
     /// dialogue is active and to restore them when dialogue ends
     public RectTransform gameControlsContainer;
 
+    private bool runningOptions;
+
+    private float elapsedTime;
+    private float startTime;
+    private float optionStartTime;
+
+    private int stage;
+
     void Awake()
     {
+        stage = 0;
+        elapsedTime = 0f;
+        startTime = Time.time;
         // Start by hiding the container, line and option buttons
-        if (dialogueContainer != null)
+       /* if (dialogueContainer != null)
             dialogueContainer.SetActive(false);
 
-        lineText.gameObject.SetActive(false);
+        lineText.gameObject.SetActive(false);*/
 
         foreach (var button in optionButtons)
         {
@@ -88,13 +99,77 @@ public class DialogueUI : DialogueUIBehaviour
             continuePrompt.SetActive(false);
     }
 
+    void Start(){
+        //Services.EventManager.Register<NewChatLineAdded>(NewChatLineAdded);
+    }
+
+    void Update(){
+        //check time since running options
+        if(runningOptions){
+            if (Time.time - startTime - optionStartTime > 0)
+            {
+                elapsedTime = Time.time - startTime - optionStartTime;
+            } else{
+                elapsedTime = Time.time - optionStartTime;
+            }
+
+            if (elapsedTime > Random.Range(10f, 30f)){
+                GetComponent<DialogueRunner>().Stop();
+                Services.Main.chatManager.endedNodeTime = Time.time;
+                runningOptions = false;
+                foreach (var button in optionButtons)
+                {
+                    button.gameObject.SetActive(false);
+                }
+
+            }
+        }
+
+
+       /* if(optionButtons[0].gameObject.activeSelf){
+            
+        }*/
+        if(Services.Main.chatManager.chatIsHidden){
+            foreach (var button in optionButtons)
+            {
+                button.GetComponent<Image>().color = new Color(
+                    button.GetComponent<Image>().color.r,
+                    button.GetComponent<Image>().color.g,
+                    button.GetComponent<Image>().color.b,0f);
+            }
+        } else{
+            foreach (var button in optionButtons)
+            {
+                button.GetComponent<Image>().color = new Color(
+                    button.GetComponent<Image>().color.r,
+                    button.GetComponent<Image>().color.g,
+                    button.GetComponent<Image>().color.b, 1f);
+            }
+        }
+
+
+
+    }
+
     /// Show a line of dialogue, gradually
     public override IEnumerator RunLine(Yarn.Line line)
     {
-        // Show the text
-        lineText.gameObject.SetActive(true);
+        float timeSpent = 0f;
+        string reline = line.text;
+        string result = "";
+        if (line.text.Contains("me: ")){
+            timeSpent = 0.1f;
+            result = reline.Replace("me: ", "<b>me:</b> ");
+        } else if(line.text.Contains("ivory: ")){
 
-        if (textSpeed > 0.0f)
+            timeSpent = line.text.Length * Random.Range(0.05f, 0.2f);
+            result = reline.Replace("ivory: ", "<b>ivory: </b>");
+        }
+        yield return new WaitForSeconds(timeSpent);
+        // Show the text
+        //  lineText.gameObject.SetActive(true);
+
+        /*if (textSpeed > 0.0f)
         {
             // Display the line one character at a time
             var stringBuilder = new StringBuilder();
@@ -102,28 +177,43 @@ public class DialogueUI : DialogueUIBehaviour
             foreach (char c in line.text)
             {
                 stringBuilder.Append(c);
-                lineText.text = stringBuilder.ToString();
+               // lineText.text = stringBuilder.ToString();
                 yield return new WaitForSeconds(textSpeed);
             }
         }
         else
         {
             // Display the line immediately if textSpeed == 0
-            lineText.text = line.text;
-        }
+          //  lineText.text = line.text;
+        }*/
+        GameObject chatline = Instantiate(Services.Prefabs.ChatLine,
+                                          Services.Prefabs.ChatLine.transform.position,
+                                          Services.Prefabs.ChatLine.transform.rotation);
 
+        //chatline.GetComponent<RectTransform>().pivot = new Vector2(0, 1);
+        chatline.transform.SetParent(Services.Main.ScrollingObj.transform,false);
+
+
+        chatline.GetComponent<Text>().text = result;
+        if(line.text.Contains("ivory: ")){
+            Services.EventManager.Fire(new NewChatLineAdded());
+        }
+        Canvas.ForceUpdateCanvases();
+        Services.Main.ScrollingObj.transform.parent.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
+
+        Canvas.ForceUpdateCanvases();
         // Show the 'press any key' prompt when done, if we have one
         if (continuePrompt != null)
             continuePrompt.SetActive(true);
 
         // Wait for any user input
-        while (Input.anyKeyDown == false)
+       /* while (Input.anyKeyDown == false)
         {
             yield return null;
-        }
+        }*/
 
         // Hide the text and prompt
-        lineText.gameObject.SetActive(false);
+       // lineText.gameObject.SetActive(false);
 
         if (continuePrompt != null)
             continuePrompt.SetActive(false);
@@ -134,6 +224,9 @@ public class DialogueUI : DialogueUIBehaviour
     public override IEnumerator RunOptions(Yarn.Options optionsCollection,
                                             Yarn.OptionChooser optionChooser)
     {
+        //running options
+        runningOptions = true;
+        optionStartTime = Time.time;
         // Do a little bit of safety checking
         if (optionsCollection.options.Count > optionButtons.Count)
         {
@@ -159,6 +252,7 @@ public class DialogueUI : DialogueUIBehaviour
             yield return null;
         }
 
+        runningOptions = false;
         // Hide all the buttons
         foreach (var button in optionButtons)
         {
@@ -193,8 +287,8 @@ public class DialogueUI : DialogueUIBehaviour
         Debug.Log("Dialogue starting!");
 
         // Enable the dialogue controls.
-        if (dialogueContainer != null)
-            dialogueContainer.SetActive(true);
+       /* if (dialogueContainer != null)
+            dialogueContainer.SetActive(true);*/
 
         // Hide the game controls.
         if (gameControlsContainer != null)
@@ -211,8 +305,8 @@ public class DialogueUI : DialogueUIBehaviour
         Debug.Log("Complete!");
 
         // Hide the dialogue interface.
-        if (dialogueContainer != null)
-            dialogueContainer.SetActive(false);
+        /*if (dialogueContainer != null)
+            dialogueContainer.SetActive(false);*/
 
         // Show the game controls.
         if (gameControlsContainer != null)

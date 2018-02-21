@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour {
 
         if(Input.GetKeyUp(KeyCode.R)){
             Services.SceneStackManager.Swap<TitleScreen>();
+            //SceneManager.LoadScene("main");
         }
 	}
 
