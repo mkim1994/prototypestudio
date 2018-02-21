@@ -8,4 +8,5 @@ public class PrefabDB : ScriptableObject {
     private GameObject[] scenes;
     public GameObject[] Scenes { get { return scenes; } }
 
+
 }
