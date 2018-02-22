@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Player1
+  - Player2
+  - Baby
+  - Canada
+  - USA
   layers:
   - Default
   - TransparentFX
@@ -40,4 +45,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Hand
+    uniqueID: 2853896111
+    locked: 0
+  - name: Leg
+    uniqueID: 3414296987
+    locked: 0
+  - name: Body
+    uniqueID: 3648523357
+    locked: 0
+  - name: Foot
+    uniqueID: 2882489821
+    locked: 0
+  - name: BodyOverlay
+    uniqueID: 3211300677
+    locked: 0
+  - name: Head
+    uniqueID: 416372565
+    locked: 0
+  - name: Neck
+    uniqueID: 2319681617
+    locked: 0
+  - name: Players
+    uniqueID: 1112113223
     locked: 0

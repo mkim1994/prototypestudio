@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour {
 		Services.TaskManager = new TaskManager();
 		Services.Prefabs = Resources.Load<PrefabDB>("Prefabs/Prefabs");
         Services.Materials = Resources.Load<MaterialDB>("Art/Materials");
+        Services.Sprites = Resources.Load<SpriteDB>("Sprites/Sprites");
 		Services.SceneStackManager = new SceneStackManager<TransitionData>(sceneRoot, Services.Prefabs.Scenes);
 		Services.InputManager = new InputManager();
 
