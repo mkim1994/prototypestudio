@@ -52,17 +52,20 @@ TagManager:
   - name: RightHand
     uniqueID: 2770901865
     locked: 0
+  - name: RightFoot
+    uniqueID: 2882489821
+    locked: 0
+  - name: LeftFoot
+    uniqueID: 211336437
+    locked: 0
   - name: Leg
     uniqueID: 3414296987
     locked: 0
   - name: Body
     uniqueID: 3648523357
     locked: 0
-  - name: LeftFoot
-    uniqueID: 211336437
-    locked: 0
-  - name: RightFoot
-    uniqueID: 2882489821
+  - name: Neck
+    uniqueID: 2319681617
     locked: 0
   - name: BodyOverlay
     uniqueID: 3211300677
@@ -70,8 +73,8 @@ TagManager:
   - name: Head
     uniqueID: 416372565
     locked: 0
-  - name: Neck
-    uniqueID: 2319681617
+  - name: Grabbed
+    uniqueID: 182032749
     locked: 0
   - name: Players
     uniqueID: 1112113223

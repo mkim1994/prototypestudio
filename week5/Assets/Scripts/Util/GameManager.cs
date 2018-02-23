@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour {
 	{
 		//Services.EventManager.Register<Reset>(Reset);
         fadeCavnas.Fade(true,2f);
-		Services.SceneStackManager.PushScene<TitleScreen>();
+		//Services.SceneStackManager.PushScene<TitleScreen>();
+        Services.SceneStackManager.PushScene<Intro>();
 	}
 
 	// Update is called once per frame
@@ -34,7 +35,8 @@ public class GameManager : MonoBehaviour {
         }
 
         if(Input.GetKeyUp(KeyCode.R)){
-            Services.SceneStackManager.Swap<TitleScreen>();
+           // Services.SceneStackManager.Swap<TitleScreen>();
+            SceneManager.LoadScene("main");
         }
 	}
 

@@ -17,4 +17,8 @@ public class CountDown : MonoBehaviour {
     public void StartGame(){
         Services.Main.StartGame();
     }
+
+    public void SoundHorn(){
+        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+    }
 }

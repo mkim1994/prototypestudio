@@ -13,3 +13,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handSprite: {fileID: 21300000, guid: f0e775c864dcd4150b26c8e92ad621ba, type: 3}
   handgrabSprite: {fileID: 21300000, guid: 72994ee2771df4e338254fb0785dd693, type: 3}
+  jacketCanadaSprites:
+  - {fileID: 21300000, guid: 09f76f499978e4ba885ed56b916487fe, type: 3}
+  - {fileID: 21300000, guid: bcdff08d51cf04bc8b3ca7dc3dbec71c, type: 3}
+  jacketUSASprites:
+  - {fileID: 21300000, guid: 348736b3d6f3b4f0183f36f5607c5a60, type: 3}
+  - {fileID: 21300000, guid: 4bce40e375c1a44f6ac4c6952076ac71, type: 3}
+  sockRCanadaSprites:
+  - {fileID: 21300000, guid: dc3d1b378a30148a699d166e1fd8271b, type: 3}
+  - {fileID: 21300000, guid: 2c75afae5c5cf48b493980bde78838ed, type: 3}
+  sockRUSASprites:
+  - {fileID: 21300000, guid: 1edfae832cb0f48ada6f9110bac7da42, type: 3}
+  - {fileID: 21300000, guid: 3b322487f3bb84096965048142d4806e, type: 3}
+  sockLCanadaSprites:
+  - {fileID: 21300000, guid: 9015117957f6846f8aa552251f0da7df, type: 3}
+  - {fileID: 21300000, guid: 590751aa5e48d4e9eac226ab2121174d, type: 3}
+  sockLUSASprites:
+  - {fileID: 21300000, guid: cb006ca968e594bc6baf4db364ace8a2, type: 3}
+  - {fileID: 21300000, guid: 5ad56ef1a2c704353a5b7be1d4a234aa, type: 3}

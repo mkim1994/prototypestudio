@@ -21,7 +21,7 @@ public class Main : Scene<TransitionData> {
 
     public float canadaThreshold, usaThreshold;
 
-    public Transform headPos, lefthandPos, righthandPos, legPos, bodyPos, leftfootPos, rightfootPos, neckPos;
+    public Transform headPos, lefthandPos, righthandPos, legPos, bodyPos, bodyoverlayPos, leftfootPos, rightfootPos, neckPos;
 
 	// Use this for initialization
 	void Start () {
@@ -35,7 +35,8 @@ public class Main : Scene<TransitionData> {
 
     public void StartGame(){
         
-        timerText.gameObject.SetActive(true);
+       // timerText.gameObject.SetActive(true);
+        timerText.GetComponent<AudioSource>().Play();
         playManager.StartGame();
         gameStarted = true;
     }

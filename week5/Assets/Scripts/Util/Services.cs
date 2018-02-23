@@ -13,6 +13,7 @@ public static class Services {
     public static InputManager InputManager { get; set; }
 
 
+    public static Intro Intro { get; set; }
     public static Main Main { get; set; }
     public static TitleScreen TitleScreen { get; set; }
 
