@@ -7,10 +7,13 @@ public class Clothes : MonoBehaviour {
     public bool collidingWithBaby;
     public bool onTheBaby;
 
+    public Vector2 originalPos;
+
 	// Use this for initialization
 	void Start () {
         collidingWithBaby = false;
         onTheBaby = false;
+        originalPos = transform.position;
 	}
 	
 	// Update is called once per frame

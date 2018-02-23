@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 114395372953882430}
   - component: {fileID: 50011794732947554}
   - component: {fileID: 61237078263404512}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: P2_cursor
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 114095459301362172}
   - component: {fileID: 50490406770517666}
   - component: {fileID: 61117624361573638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: P1_cursor
   m_TagString: Player1
   m_Icon: {fileID: 0}
@@ -1269,6 +1269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39775b8cdb89f4bc191e5f80c22d77de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collidingWithBaby: 0
+  onTheBaby: 0
+  originalPos: {x: 0, y: 0}
 --- !u!114 &114095459301362172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1550,6 +1553,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39775b8cdb89f4bc191e5f80c22d77de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collidingWithBaby: 0
+  onTheBaby: 0
+  originalPos: {x: 0, y: 0}
 --- !u!114 &114395372953882430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1696,7 +1702,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: CANADA MOM WINS
+  m_text: CANADA MOM WINS!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3ec4680656e746528aa4dc223feebb4, type: 2}
   m_sharedMaterial: {fileID: 21851627508981738, guid: a3ec4680656e746528aa4dc223feebb4,
@@ -1761,10 +1767,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -100, y: -50, z: -100, w: -50}
+  m_margin: {x: -120, y: -50, z: -120, w: -50}
   m_textInfo:
     textComponent: {fileID: 114568988895010130}
-    characterCount: 15
+    characterCount: 17
     spriteCount: 0
     spaceCount: 2
     wordCount: 3
@@ -2204,6 +2210,7 @@ MonoBehaviour:
   playManager: {fileID: 114757942153678778}
   CanadaClothes: {fileID: 1632608809581486}
   USAClothes: {fileID: 1172312478692556}
+  Baby: {fileID: 114870177248174944}
   canadaThreshold: 0
   usaThreshold: 0
   headPos: {fileID: 0}
@@ -2225,6 +2232,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1401fae8f67f545be82f4e62de92751e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  head: {fileID: 0}
+  lefthand: {fileID: 0}
+  righthand: {fileID: 0}
+  leg: {fileID: 0}
+  body: {fileID: 0}
+  leftfoot: {fileID: 0}
+  rightfoot: {fileID: 0}
+  bodyoverlay: {fileID: 0}
+  neck: {fileID: 0}
+  canadaScore: 0
+  usaScore: 0
 --- !u!124 &124791257709701344
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2264,7 +2282,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1112113223
-  m_SortingLayer: 8
+  m_SortingLayer: 10
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: f0e775c864dcd4150b26c8e92ad621ba, type: 3}
   m_Color: {r: 1, g: 0.33088237, b: 0.33088237, a: 1}
@@ -2396,7 +2414,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -646443939
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 612d7149d47b74cad836e28a133eeb47, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2440,7 +2458,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1112113223
-  m_SortingLayer: 8
+  m_SortingLayer: 10
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: f0e775c864dcd4150b26c8e92ad621ba, type: 3}
   m_Color: {r: 0.29411763, g: 0.79553765, b: 1, a: 1}
@@ -2484,7 +2502,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -646443939
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 317b0f382f3d948b9b43644f83083a7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2617,7 +2635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0000019073486, y: -25}
+  m_AnchoredPosition: {x: 0.0000038146973, y: -25}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224158545602946584
@@ -2769,6 +2787,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 195.62, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}

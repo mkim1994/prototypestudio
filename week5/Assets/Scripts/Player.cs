@@ -9,7 +9,6 @@ public class Player : MonoBehaviour {
     private bool grabbing;
 
     private GameObject grabbed;
-    private Vector3 grabbedOriginalPos;
 	// Use this for initialization
 	void Start () {
         grabbing = false;
@@ -46,40 +45,67 @@ public class Player : MonoBehaviour {
         if(Input.GetAxis(playername+"_Grab") > 0){
             GetComponent<SpriteRenderer>().sprite = Services.Sprites.HandgrabSprite;
             grabbing = true;
-        } else{
+        } else{ 
 
             GetComponent<SpriteRenderer>().sprite = Services.Sprites.HandSprite;
             grabbing = false;
-            if(grabbed != null){
+            if(grabbed != null){ // DROP WHAT YOU'RE HOLDING
                 if (grabbed.GetComponent<Clothes>().collidingWithBaby) //putting it on the baby
                 {
                     string layer = grabbed.GetComponent<SpriteRenderer>().sortingLayerName;
                     switch (layer)
                     {
                         case "Body":
-                            grabbed.transform.SetParent(Services.Main.transform);
-                            grabbed.transform.position = Services.Main.bodyPos.position;
+                            if (Services.Main.Baby.body == null) //if it is empty
+                            {
+                                grabbed.transform.position = Services.Main.bodyPos.position;
+                                Services.Main.Baby.body = grabbed;
+                                PutGrabbedOn();
+                            } else{
+                                TakeGrabbedOff();
+                            }
                             break;
                     }
-                    grabbed.GetComponent<Clothes>().onTheBaby = true;;
-                    grabbed = null;
                 }
-                else
+                else //just dropping it / disrobing the baby
                 {
-                    if (grabbed.tag == "Canada")
+                    string layer = grabbed.GetComponent<SpriteRenderer>().sortingLayerName;
+                    switch (layer)
                     {
-                        grabbed.transform.SetParent(Services.Main.CanadaClothes.transform);
+                        case "Body":
+                            if (Services.Main.Baby.body == grabbed)
+                            {
+                                Services.Main.Baby.body = null;
+                            }
+                            break;
                     }
-                    else if (grabbed.tag == "USA")
-                    {
-                        grabbed.transform.SetParent(Services.Main.USAClothes.transform);
-                    }
-                    grabbed.transform.position = grabbedOriginalPos;
-                    grabbed.transform.localScale = new Vector3(3, 3, 1);
-                    grabbed = null;
+                    TakeGrabbedOff();
+
                 }
             }
         }
+    }
+
+    void PutGrabbedOn(){
+        grabbed.transform.SetParent(Services.Main.transform);
+        grabbed.GetComponent<Clothes>().onTheBaby = true;
+        grabbed.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        grabbed = null;
+    }
+
+    void TakeGrabbedOff(){
+        if (grabbed.tag == "Canada")
+        {
+            grabbed.transform.SetParent(Services.Main.CanadaClothes.transform);
+        }
+        else if (grabbed.tag == "USA")
+        {
+            grabbed.transform.SetParent(Services.Main.USAClothes.transform);
+        }
+        grabbed.transform.position = grabbed.GetComponent<Clothes>().originalPos;
+        grabbed.transform.localScale = new Vector3(3, 3, 1);
+        grabbed.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        grabbed = null;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -94,13 +120,26 @@ public class Player : MonoBehaviour {
             /*if ((playername == "P1" && collision.tag == "Canada") ||
                (playername == "P2" && collision.tag == "USA"))
             {*/
-                if (grabbing && grabbed == null)
+            if (grabbing && grabbed == null)
+            {
+                grabbed = collision.gameObject;
+                grabbed.transform.localScale = new Vector3(6, 6, 1);
+
+                grabbed.GetComponent<SpriteRenderer>().sortingOrder = 100;
+
+                grabbed.transform.SetParent(transform);
+
+                string layer = grabbed.GetComponent<SpriteRenderer>().sortingLayerName;
+                switch (layer)
                 {
-                    grabbed = collision.gameObject;
-                    grabbed.transform.localScale = new Vector3(6, 6, 1);
-                    grabbedOriginalPos = grabbed.transform.position;
-                    grabbed.transform.SetParent(transform);
+                    case "Body":
+                        if (Services.Main.Baby.body == grabbed)
+                        {
+                            Services.Main.Baby.body = null;
+                        }
+                        break;
                 }
+            }
             //}
         }
     }

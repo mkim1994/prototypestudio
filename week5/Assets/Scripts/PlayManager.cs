@@ -22,7 +22,18 @@ public class PlayManager : MonoBehaviour {
                 int remain = (int)remainingTime;
                 Services.Main.timerText.text = "" + remain;
             } else{
-                
+                int evaluated = Services.Main.Baby.Evaluate();
+                switch(evaluated){
+                    case -1:
+                        Services.Main.winnerText.text = "USA MOM WINS!!";
+                        break;
+                    case 0:
+                        Services.Main.winnerText.text = "BOTH MOMS WIN!!";
+                        break;
+                    case 1:
+                        Services.Main.winnerText.text = "CANADA MOM WINS!!";
+                        break;
+                }
                 Services.Main.winnerText.gameObject.SetActive(true);
             }
         } 

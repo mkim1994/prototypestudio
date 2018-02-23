@@ -17,6 +17,7 @@ public class Main : Scene<TransitionData> {
 
     public PlayManager playManager;
     public GameObject CanadaClothes, USAClothes;
+    public Baby Baby;
 
     public float canadaThreshold, usaThreshold;
 
