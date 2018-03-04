@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
 	void Start()
 	{
 		//Services.EventManager.Register<Reset>(Reset);
-        fadeCavnas.Fade(true,2f);
+       // fadeCavnas.Fade(true,2f);
 		Services.SceneStackManager.PushScene<TitleScreen>();
 	}
 

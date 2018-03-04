@@ -15,3 +15,5 @@ MonoBehaviour:
   - {fileID: 1478640791430904, guid: 6ed6ea1fc67f9442694d5393a0c81b3b, type: 2}
   - {fileID: 1478640791430904, guid: fcaf8a4f7305e4c7a96176d125b2bfd8, type: 2}
   space: {fileID: 1922490981605898, guid: a1f246e48a47041b492d666c3ded5bf7, type: 2}
+  point: {fileID: 1649666491266844, guid: 96223651171054aec9ccc353c775c0c2, type: 2}
+  curvedline: {fileID: 1444629636366352, guid: a5a1f8903e7544205a6cdf026a81ea80, type: 2}

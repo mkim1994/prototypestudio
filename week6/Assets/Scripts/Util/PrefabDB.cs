@@ -12,4 +12,12 @@ public class PrefabDB : ScriptableObject {
     private GameObject space;
     public GameObject Space { get { return space; }}
 
+    [SerializeField]
+    private GameObject point;
+    public GameObject Point { get { return point; }}
+
+    [SerializeField]
+    private GameObject curvedline;
+    public GameObject CurvedLine { get { return curvedline; }}
+
 }
