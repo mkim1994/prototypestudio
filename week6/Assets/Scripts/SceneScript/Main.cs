@@ -16,6 +16,8 @@ public class Main : Scene<TransitionData> {
 	void Start () {
 
         //line.CreateSpaces();
+
+        Services.GameManager.audioController.bgm.Play();
 	}
 	
 	// Update is called once per frame

@@ -35,6 +35,8 @@ public class Line : MonoBehaviour {
 
     private bool cameraShaking;
 
+    private bool changePitch;
+
 
     private enum Traffic
     {
@@ -116,6 +118,7 @@ public class Line : MonoBehaviour {
 
         DOTween.Init();
         cameraShaking = false;
+        changePitch = false;
 
     }
 
@@ -125,6 +128,11 @@ public class Line : MonoBehaviour {
             switch (currentTraffic)
             {
                 case Traffic.Green:
+                    if (changePitch)
+                    {
+                        changePitch = false;
+                        Services.GameManager.audioController.bgm.DOPitch(2f, 0.5f);
+                    }
                     if (!player1Die)
                     {
                         MainLine[player1].material = Services.GameManager.mats[1];
@@ -135,6 +143,11 @@ public class Line : MonoBehaviour {
                     }
                     break;
                 case Traffic.Yellow:
+                    if (changePitch)
+                    {
+                        changePitch = false;
+                        Services.GameManager.audioController.bgm.DOPitch(1f, 0.5f);
+                    }
                     if (!player1Die)
                     {
                         MainLine[player1].material = Services.GameManager.mats[2];
@@ -145,6 +158,11 @@ public class Line : MonoBehaviour {
                     }
                     break;
                 case Traffic.Red:
+                    if (changePitch)
+                    {
+                        changePitch = false;
+                        Services.GameManager.audioController.bgm.DOPitch(0.5f, 0.5f);
+                    }
                     if (!player1Die)
                     {
                         MainLine[player1].material = Services.GameManager.mats[3];
@@ -197,12 +215,21 @@ public class Line : MonoBehaviour {
                         if (currentTraffic == Traffic.Red && redHold)
                         {
                             player1Die = true;
+
                             StartCoroutine(RespawnPlayer(player1Die, player1, player2goal));
                         } else if(currentTraffic == Traffic.Red){
+                            if (!Services.GameManager.audioController.player1death.isPlaying)
+                            {
+                                Services.GameManager.audioController.player1death.Play();
+                            }
                             CameraShake();
                         }
                         else if(currentTraffic != Traffic.Red)
                         {
+                            if (EnemyPresence[player1])
+                            {
+                                Services.GameManager.audioController.enemy1Run[Random.Range(0, 5)].Play();
+                            }
                             Material currentMat = MainLine[player1].material;
                             MainLine[player1].material = Services.GameManager.mats[0];
                             player1 += 1;
@@ -212,6 +239,8 @@ public class Line : MonoBehaviour {
                 } else if(Input.GetAxis("P1_Vertical") <=0.05f && !player1Die){ //not moving up, hasn't died yet
                     if(EnemyPresence[player1]){
                         player1Die = true;
+
+                        Services.GameManager.audioController.player1death.Play();
                         CameraShake();
                         StartCoroutine(RespawnPlayer(player1Die, player1, player2goal));
                     }
@@ -225,17 +254,29 @@ public class Line : MonoBehaviour {
                         if (currentTraffic == Traffic.Red && redHold)
                         {
                             player2Die = true;
+
                             StartCoroutine(RespawnPlayer(player2Die, player2, player1goal));
                         } else if(currentTraffic == Traffic.Red){
+
+                            if (!Services.GameManager.audioController.player2death.isPlaying)
+                            {
+                                Services.GameManager.audioController.player2death.Play();
+                            }
                             CameraShake();
                         }
                         else if (currentTraffic != Traffic.Red)
                         {
+
+                            if (EnemyPresence[player2])
+                            {
+                                Services.GameManager.audioController.enemy2Run[Random.Range(0, 5)].Play();
+                            }
                             Material currentMat = MainLine[player2].material;
                             MainLine[player2].material = Services.GameManager.mats[0];
                             player2 -= 1;
                             MainLine[player2].material = currentMat;
                         }
+
 
                     }
 
@@ -244,6 +285,8 @@ public class Line : MonoBehaviour {
                     if (EnemyPresence[player2])
                     {
                         player2Die = true;
+
+                        Services.GameManager.audioController.player2death.Play();
 
                         CameraShake();
                         StartCoroutine(RespawnPlayer(player2Die, player2, player1goal));
@@ -266,13 +309,19 @@ public class Line : MonoBehaviour {
     IEnumerator WaitRandomTraffic(){
         yield return new WaitForSeconds(Random.Range(0.6f, 2.5f));
 
+        changePitch = true;
         currentTraffic = Traffic.Yellow;
         yield return new WaitForSeconds(1f);
 
+        changePitch = true;
         currentTraffic = Traffic.Red;
         yield return new WaitForSeconds(0.5f);
         redHold = true;
+
         yield return new WaitForSeconds(Random.Range(1f, 3f));
+
+
+        changePitch = true;
         redHold = false;
 
         currentTraffic = Traffic.Green;
@@ -301,8 +350,10 @@ public class Line : MonoBehaviour {
     }
 
     IEnumerator VictoryAnimation(bool player1Win){
+        Services.GameManager.audioController.bgm.Stop();
         float timeAnim = 0.01f;
-        if(!player1Win){
+        if(!player1Win){ //player 2 wins
+            Services.GameManager.audioController.player2win.Play();
             for (int i = 0; i < MainLine.Length; ++i){
                 if (i != player2)
                 {
@@ -314,7 +365,9 @@ public class Line : MonoBehaviour {
             }
 
             Services.Main.player1WinText.SetActive(true); //swapped b/c of careless ordering lol
-        } else{
+        } else{ //player 1 wins
+
+            Services.GameManager.audioController.player1win.Play();
             for (int i = MainLine.Length - 1; i >= 0; --i)
             {
                 if (i != player1)

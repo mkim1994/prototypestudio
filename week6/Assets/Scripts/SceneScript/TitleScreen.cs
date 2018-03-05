@@ -31,13 +31,21 @@ public class TitleScreen : Scene<TransitionData> {
 
             if (Input.GetKeyDown(KeyCode.W))
             {
-                p1rdy.text = "READY";
-                p1isrdy = true;
+                if (!p1isrdy)
+                {
+                    Services.GameManager.audioController.enemy2Run[0].Play();
+                    p1rdy.text = "READY";
+                    p1isrdy = true;
+                }
             }
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                p2rdy.text = "READY";
-                p2isrdy = true;
+                if (!p2isrdy)
+                {
+                    Services.GameManager.audioController.enemy1Run[0].Play();
+                    p2rdy.text = "READY";
+                    p2isrdy = true;
+                }
             }
         }
 
@@ -50,10 +58,12 @@ public class TitleScreen : Scene<TransitionData> {
         directions.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(1f);
+        Services.GameManager.audioController.starting.Play();
         Services.GameManager.GetComponentInChildren<Line>().CreateFake();
         yield return new WaitForSeconds(2f);
         directions.gameObject.SetActive(false);
         go.gameObject.SetActive(true);
+        Services.GameManager.audioController.go.Play();
         yield return new WaitForSeconds(1f);
         StartGame();
     }
