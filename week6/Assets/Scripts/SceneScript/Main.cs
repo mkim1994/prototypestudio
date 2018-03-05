@@ -7,16 +7,24 @@ using UnityEngine.UI;
 public class Main : Scene<TransitionData> {
 
 
-    public Line line;
+    //public Line line;
+
+
+    public GameObject player1WinText, player2WinText;
 
 	// Use this for initialization
 	void Start () {
 
-        line.CreateSpaces();
+        //line.CreateSpaces();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update(){
+        Services.GameManager.GetComponentInChildren<Line>().LineUpdate();
+    }
+	void FixedUpdate () {
+        //line.LineUpdate();
+        Services.GameManager.GetComponentInChildren<Line>().LineFixedUpdate();
 	}
 
 	void InitializeServices()

@@ -188,7 +188,7 @@ MonoBehaviour:
   - {fileID: 1386032003077220}
   - {fileID: 1693318246784546}
   lineSegmentSize: 10
-  lineWidth: 3
+  lineWidth: 1
   showGizmos: 1
   gizmoSize: 0.2
   gizmoColor: {r: 1, g: 0, b: 0, a: 0.5}
@@ -213,18 +213,14 @@ LineRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1444629636366352}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 5d99a50770dd2475c87dd0ce1553e6af, type: 2}
-  - {fileID: 2100000, guid: 47dc4c96d427044fc82dbeaca64af065, type: 2}
-  - {fileID: 2100000, guid: d1c7f75e8db5b40c2b499e8ec8aabea3, type: 2}
-  - {fileID: 2100000, guid: fb2cff895a99246b7a16e0ab5aa4565b, type: 2}
-  - {fileID: 2100000, guid: ffa9232a436674eda80ee4550f3f5c3e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -244,9 +240,7 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Positions:
-  - {x: -50, y: 0, z: 0}
-  - {x: -49.878204, y: -3.4878232, z: 0}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 1

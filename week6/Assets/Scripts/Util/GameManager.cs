@@ -10,6 +10,10 @@ public class GameManager : MonoBehaviour {
     public GameObject TestingScenes;
     public FadeCanvas fadeCavnas;
 
+    public AudioController audioController;
+
+    public Material[] mats;
+
 	void Awake()
 	{
         TestingScenes.SetActive(false);
@@ -34,7 +38,8 @@ public class GameManager : MonoBehaviour {
         }
 
         if(Input.GetKeyUp(KeyCode.R)){
-            Services.SceneStackManager.Swap<TitleScreen>();
+            //Services.SceneStackManager.Swap<TitleScreen>();
+            SceneManager.LoadScene("main");
         }
 	}
 

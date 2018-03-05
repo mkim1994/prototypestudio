@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour {
 
-    public AudioSource bgm;
+    // additive
+    public AudioSource greenbgm, yellowbgm, redbgm;
+    public AudioSource enemyRun, enemyBoo;
+    public AudioSource greenRun, redBlock; 
+
 	// Use this for initialization
 	void Start () {
 		
