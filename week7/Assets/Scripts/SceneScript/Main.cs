@@ -26,6 +26,8 @@ public class Main : Scene<TransitionData> {
 		InitializeServices();
 		Services.GameManager.currentCamera = GetComponentInChildren<Camera>();
 
+        Services.GameManager.fadeCavnas.Fade(true, 2f);
+
 	}
 
 
