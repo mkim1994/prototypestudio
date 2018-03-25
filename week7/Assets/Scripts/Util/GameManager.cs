@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour {
     public GameObject TestingScenes;
     public FadeCanvas fadeCavnas;
 
+
+
+    public bool dudeBathroom;
+    public bool penis;
+
 	void Awake()
 	{
         TestingScenes.SetActive(false);

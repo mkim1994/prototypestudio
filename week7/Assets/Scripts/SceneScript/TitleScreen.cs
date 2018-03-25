@@ -9,6 +9,9 @@ public class TitleScreen : Scene<TransitionData> {
 
 	}
 
+
+
+
 	// Update is called once per frame
 	void Update()
 	{
@@ -28,7 +31,12 @@ public class TitleScreen : Scene<TransitionData> {
 
 
 
-    public void StartGame(){
+    public void StartGame(int n){
+        if(n == 0){
+            Services.GameManager.dudeBathroom = true;
+        } else{
+            Services.GameManager.dudeBathroom = false;
+        }
         Services.SceneStackManager.Swap<Main>();
     }
 }
