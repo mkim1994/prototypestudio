@@ -8,5 +8,12 @@ public class PrefabDB : ScriptableObject {
     private GameObject[] scenes;
     public GameObject[] Scenes { get { return scenes; } }
 
+    [SerializeField]
+    private GameObject leftFoot;
+    public GameObject LeftFoot{ get { return leftFoot; }}
+
+    [SerializeField]
+    private GameObject rightFoot;
+    public GameObject RightFoot { get { return rightFoot; } }
 
 }
