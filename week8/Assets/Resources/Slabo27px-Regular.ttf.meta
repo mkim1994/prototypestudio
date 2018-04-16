@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 92f4cd27f6f3e45dd88be6b8a4e121d7
+timeCreated: 1522668256
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Slabo 27px
+  fontNames:
+  - Slabo 27px
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject sceneRoot;
     public Camera currentCamera;
     public GameObject TestingScenes;
-    public FadeCanvas fadeCavnas;
+    public FadeCanvas fadeCanvas;
 
 	void Awake()
 	{
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
 	void Start()
 	{
 		//Services.EventManager.Register<Reset>(Reset);
-        fadeCavnas.Fade(true,2f);
+        fadeCanvas.Fade(true,2f);
 		Services.SceneStackManager.PushScene<TitleScreen>();
 	}
 

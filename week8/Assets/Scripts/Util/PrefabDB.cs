@@ -16,4 +16,9 @@ public class PrefabDB : ScriptableObject {
     private GameObject rightFoot;
     public GameObject RightFoot { get { return rightFoot; } }
 
+
+    [SerializeField]
+    private GameObject pixel;
+    public GameObject Pixel{ get { return pixel; }}
+
 }

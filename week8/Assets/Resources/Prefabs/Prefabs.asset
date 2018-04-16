@@ -13,4 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scenes:
   - {fileID: 1478640791430904, guid: 6ed6ea1fc67f9442694d5393a0c81b3b, type: 2}
-  - {fileID: 1478640791430904, guid: fcaf8a4f7305e4c7a96176d125b2bfd8, type: 2}
+  - {fileID: 1478640791430904, guid: c668f79e86e0243e98680541bdacff4f, type: 2}
+  leftFoot: {fileID: 0}
+  rightFoot: {fileID: 0}
+  pixel: {fileID: 1404540832348282, guid: d5b251223c1dd48f090349b027e3c498, type: 2}
