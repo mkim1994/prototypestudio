@@ -2,7 +2,7 @@
 ## Initialization
 ################################################################################
 
-init offset = -1
+init offset = -2
 
 
 ################################################################################
@@ -113,8 +113,8 @@ screen say(who, what):
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
-    if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+   # if not renpy.variant("small"):
+       # add SideImage() xalign 0.0 yalign 1.0
 
 
 ## Make the namebox available for styling through the Character object.
@@ -155,7 +155,7 @@ style say_label:
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
-
+    line_spacing 13
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
@@ -223,7 +223,8 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 270
+    #ypos 270
+    yalign 0.5
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -245,22 +246,22 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
+    # if quick_menu:
 
-        hbox:
-            style_prefix "quick"
+    #     hbox:
+    #         style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+    #         xalign 0.5
+    #         yalign 1.0
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+    #         textbutton _("Back") action Rollback()
+    #         textbutton _("History") action ShowMenu('history')
+    #         textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+    #         textbutton _("Auto") action Preference("auto-forward", "toggle")
+    #         textbutton _("Save") action ShowMenu('save')
+    #         textbutton _("Q.Save") action QuickSave()
+    #         textbutton _("Q.Load") action QuickLoad()
+    #         textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -295,13 +296,14 @@ screen navigation():
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
-        yalign 0.5
+        yalign 0.55
 
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("Start") action Start()
+            #ypos 0.5
+            #xpos 0.5
+            textbutton _("relive") action Start()
 
         else:
 
@@ -309,9 +311,9 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        #textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        #textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -321,15 +323,15 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc"):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            #textbutton _("Help") action ShowMenu("help")
 
             ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("stop remembering") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -355,8 +357,8 @@ screen main_menu():
     tag menu
 
     style_prefix "main_menu"
-
     add gui.main_menu_background
+
 
     ## This empty frame darkens the main menu.
     frame:
@@ -382,21 +384,26 @@ style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
+style main_menu_button is navigation_button:
+    xalign 0.5
+style main_menu_button_text is navigation_button_text:
+    xalign 0.5
+
 style main_menu_frame:
-    xsize 280
-    yfill True
+    #xsize 280
+    #yfill True
 
     background "gui/overlay/main_menu.png"
 
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -20
-    xmaximum 800
-    yalign 1.0
-    yoffset -20
+#style main_menu_vbox:
+    #xalign 1.0
+    #xoffset -20
+    #xmaximum 800
+    #yalign 1.0
+    #yoffset -20
 
-style main_menu_text:
-    properties gui.text_properties("main_menu", accent=True)
+#style main_menu_text:
+    #properties gui.text_properties("main_menu", accent=True)
 
 style main_menu_title:
     properties gui.text_properties("title")
@@ -574,7 +581,6 @@ style about_text is gui_text
 style about_label_text:
     size gui.label_text_size
 
-
 ## Load and Save screens #######################################################
 ##
 ## These screens are responsible for letting the player save the game and load
@@ -584,11 +590,31 @@ style about_label_text:
 ## https://www.renpy.org/doc/html/screen_special.html#save https://
 ## www.renpy.org/doc/html/screen_special.html#load
 
+#when you press escape
 screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    #use file_slots(_("Save"))
+    vbox:
+        style_prefix "navigation"
+
+        xpos gui.navigation_xpos
+        yalign 0.5
+
+        spacing gui.navigation_spacing
+        #ypos 0.5
+        #xpos 0.5
+        textbutton _("return to the beginning") action MainMenu()
+
+        #textbutton _("About") action ShowMenu("about")
+        if renpy.variant("pc"):
+
+            ## Help isn't necessary or relevant to mobile devices.
+            #textbutton _("Help") action ShowMenu("help")
+
+            ## The quit button is banned on iOS and unnecessary on Android.
+            textbutton _("stop remembering") action Quit(confirm=not main_menu)
 
 
 screen load():
@@ -1147,8 +1173,8 @@ screen confirm(message, yes_action, no_action):
     frame:
 
         vbox:
-            xalign .5
-            yalign .5
+            xalign 0.5
+            yalign 0.5
             spacing 30
 
             label _(message):
@@ -1175,8 +1201,8 @@ style confirm_button_text is gui_medium_button_text
 style confirm_frame:
     background Frame([ "gui/confirm_frame.png", "gui/frame.png"], gui.confirm_frame_borders, tile=gui.frame_tile)
     padding gui.confirm_frame_borders.padding
-    xalign .5
-    yalign .5
+    xalign 0.5
+    yalign 0.5
 
 style confirm_prompt_text:
     text_align 0.5
@@ -1215,14 +1241,14 @@ screen skip_indicator():
 
 ## This transform is used to blink the arrows one after another.
 transform delayed_blink(delay, cycle):
-    alpha .5
+    alpha 0.5
 
     pause delay
 
     block:
-        linear .2 alpha 1.0
-        pause .2
-        linear .2 alpha 0.5
+        linear 0.2 alpha 1.0
+        pause 0.2
+        linear 0.2 alpha 0.5
         pause (cycle - .4)
         repeat
 
@@ -1266,9 +1292,9 @@ screen notify(message):
 transform notify_appear:
     on show:
         alpha 0
-        linear .25 alpha 1.0
+        linear 0.25 alpha 1.0
     on hide:
-        linear .5 alpha 0.0
+        linear 0.5 alpha 0.0
 
 
 style notify_frame is empty
@@ -1320,7 +1346,7 @@ screen nvl(dialogue, items=None):
                 action i.action
                 style "nvl_button"
 
-    add SideImage() xalign 0.0 yalign 1.0
+    #add SideImage() xalign 0.0 yalign 1.0
 
 
 screen nvl_dialogue(dialogue):

@@ -318,12 +318,12 @@ translate None strings:
     new "Loading will lose unsaved progress.\nAre you sure you want to do this?"
 
     # 00gui.rpy:374
-    old "Are you sure you want to quit?"
-    new "Are you sure you want to quit?"
+    old "end?"
+    new "end?"
 
     # 00gui.rpy:375
-    old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
-    new "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
+    old "return to the very beginning?"
+    new "return to the very beginning?"
 
     # 00gui.rpy:376
     old "Are you sure you want to end the replay?"
@@ -1096,4 +1096,15 @@ translate None strings:
     # 00console.rpy:639
     old "jump <label>: jumps to label"
     new "jump <label>: jumps to label"
+
+
+translate None strings:
+
+    # 00gui.rpy:374
+    old "Are you sure you want to quit?"
+    new "Are you sure you want to quit?"
+
+    # 00gui.rpy:375
+    old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
+    new "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
 
