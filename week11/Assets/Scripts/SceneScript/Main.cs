@@ -14,18 +14,23 @@ public class Main : Scene<TransitionData> {
 
     public int maxMessages = 25;
 
-    public GameObject ChatPanel, TextObject;
-    public InputField input;
+    public GameObject ChatPanel1, ChatPanel2,ChatPanel3, TextObject;
 
-    public ScrollRect scroll;
+    public GameObject ChatMain1, ChatMain2, ChatMain3;
+    public InputField input1, input2, input3;
 
-    public bool scrollPressed;
-    bool canAutoScroll;
+    public ScrollRect scroll1, scroll2, scroll3;
+
+
+    public Text queueButtonTxt;
+
+    public GameObject timeDisplay;
+
+    //public 
 
 	// Use this for initialization
 	void Start () {
         Services.GameManager.gameFound = false;
-        canAutoScroll = false;
 
 	}
 	
@@ -34,53 +39,91 @@ public class Main : Scene<TransitionData> {
         if(Services.GameManager.gameFound){
             
         }
-        if (input.text.Length > 0)
+        if (ChatMain1.activeSelf)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (input1.text.Length > 0)
             {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
 
-               
-                // SendMessageToChat("pressed space");
 
-                SendMessageToChat(input.text);
-                input.text = "";
-                input.ActivateInputField();
-                input.Select();
-                //canAutoScroll = true;
-                // Canvas.ForceUpdateCanvases();
+                    SendMessageToChat(1, input1.text);
+                    input1.text = "";
+                    input1.ActivateInputField();
+                    input1.Select();
 
-                scroll.verticalNormalizedPosition = 0;
-                StartCoroutine(Why());
+                    scroll1.verticalNormalizedPosition = 0;
+                    StartCoroutine(Why(1));
+                }
+            }
+
+            if (input1.isFocused)
+            {
+                Services.GameManager.typing = true;
+
+            }
+        } else if(ChatMain2.activeSelf){
+            if (input2.text.Length > 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+
+
+                    SendMessageToChat(2, input2.text);
+                    input2.text = "";
+                    input2.ActivateInputField();
+                    input2.Select();
+
+                    scroll2.verticalNormalizedPosition = 0;
+                    StartCoroutine(Why(2));
+                }
+            }
+
+            if (input2.isFocused)
+            {
+                Services.GameManager.typing = true;
+
+            }
+        } else if(ChatMain3.activeSelf){
+            if (input3.text.Length > 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+
+
+                    SendMessageToChat(3, input3.text);
+                    input3.text = "";
+                    input3.ActivateInputField();
+                    input3.Select();
+
+                    scroll3.verticalNormalizedPosition = 0;
+                    StartCoroutine(Why(3));
+                }
+            }
+
+            if (input3.isFocused)
+            {
+                Services.GameManager.typing = true;
+
             }
         }
 
-        if(input.isFocused){
-            Services.GameManager.typing = true;
 
-        }
-       /* Color col = new Color(0, 0, 0);
-        ColorUtility.TryParseHtmlString("#C8C8C8", out col);
-        if (scroll.verticalScrollbar.handleRect.GetComponent<Image>().color != scroll.verticalScrollbar.colors.pressedColor)
-        {
-            //Debug.Log("what");
-            scroll.verticalNormalizedPosition = 0;
-        }
-       /* if (scroll.verticalScrollbar.handleRect.GetComponent<Image>().color == col)
-        {
-
-            //scroll.verticalNormalizedPosition = 0;
-            scrollPressed = true;
-        }
-
-        if(!scrollPressed && canAutoScroll){
-
-            scroll.verticalNormalizedPosition = 0;
-        }*/
 	}
 
-    IEnumerator Why(){
+    IEnumerator Why(int i){
         yield return new WaitForSeconds(0.01f);
-        scroll.verticalNormalizedPosition = 0;
+        switch(i){
+            case 1:
+                scroll1.verticalNormalizedPosition = 0;
+                break;
+            case 2:
+                scroll2.verticalNormalizedPosition = 0;
+                break;
+            case 3: 
+                scroll3.verticalNormalizedPosition = 0;
+                break;
+        }
     }
 
 	void InitializeServices()
@@ -95,16 +138,6 @@ public class Main : Scene<TransitionData> {
 
 	}
 
-
-    public void ScrollPressed(int press){
-        if(press == 0){
-
-            scrollPressed = true;
-        } else{
-            scrollPressed = false;
-        }
-    }
-
     public void Restart(){
         Services.SceneStackManager.PopScene();
         Services.SceneStackManager.PushScene<Main>();
@@ -117,8 +150,7 @@ public class Main : Scene<TransitionData> {
     }
 
     public void Accept(){
-        // Services.GameManager.gameFound = true;
-        Debug.Log("yay");
+        Services.SceneStackManager.Swap<EndScreen>();
     }
 
     public void Decline(){
@@ -138,14 +170,32 @@ public class Main : Scene<TransitionData> {
                     Destroy(messageList1[0].textObj.gameObject);
                     messageList1.RemoveAt(0);
                 }
-                GameObject newText = Instantiate(TextObject, ChatPanel.transform);
+                GameObject newText = Instantiate(TextObject, ChatPanel1.transform);
                 //newText.GetComponent<Text>().
                 Message newMessage = new Message(text, newText.GetComponent<Text>());
                 messageList1.Add(newMessage);
                 break;
             case 2:
+                if (messageList2.Count > maxMessages)
+                {
+                    Destroy(messageList2[0].textObj.gameObject);
+                    messageList2.RemoveAt(0);
+                }
+                GameObject newText2 = Instantiate(TextObject, ChatPanel2.transform);
+                //newText.GetComponent<Text>().
+                Message newMessage2 = new Message(text, newText2.GetComponent<Text>());
+                messageList1.Add(newMessage2);
                 break;
             case 3:
+                if (messageList3.Count > maxMessages)
+                {
+                    Destroy(messageList3[0].textObj.gameObject);
+                    messageList3.RemoveAt(0);
+                }
+                GameObject newText3 = Instantiate(TextObject, ChatPanel3.transform);
+                //newText.GetComponent<Text>().
+                Message newMessage3 = new Message(text, newText3.GetComponent<Text>());
+                messageList1.Add(newMessage3);
                 break;
         }
 
@@ -161,6 +211,40 @@ public class Main : Scene<TransitionData> {
             text = txt;
             textObj = txtObj;
             textObj.text = text;
+        }
+    }
+
+    public void ChatOn(int ch){
+        switch(ch){
+            case 1:
+                ChatMain1.SetActive(true);
+                ChatMain2.SetActive(false);
+                ChatMain3.SetActive(false);
+                break;
+            case 2:
+
+                ChatMain1.SetActive(false);
+                ChatMain2.SetActive(true);
+                ChatMain3.SetActive(false);
+                break;
+            case 3:
+
+                ChatMain1.SetActive(false);
+                ChatMain2.SetActive(false);
+                ChatMain3.SetActive(true);
+                break;
+        }
+    }
+
+    public void Queue(){
+        
+        if(queueButtonTxt.text == "QUEUE"){
+            queueButtonTxt.text = "STOP";
+            timeDisplay.SetActive(true);
+        } else if(queueButtonTxt.text == "STOP"){
+            queueButtonTxt.text = "QUEUE";
+
+            timeDisplay.SetActive(false);
         }
     }
 

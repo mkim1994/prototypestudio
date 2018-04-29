@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 	{
 		Services.TaskManager.Update();
 
-        if(Input.GetKeyUp(KeyCode.Escape) && !typing){
+        if(Input.GetKeyUp(KeyCode.Escape)){
             Application.Quit();
         }
 

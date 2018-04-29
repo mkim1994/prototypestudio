@@ -6,8 +6,13 @@ public class TitleScreen : Scene<TransitionData> {
 
 	void Start()
 	{
-
+        StartCoroutine(WaitToLoad());
 	}
+
+    IEnumerator WaitToLoad(){
+        yield return new WaitForSeconds(4f);
+        StartGame();
+    }
 
 	// Update is called once per frame
 	void Update()
@@ -31,4 +36,6 @@ public class TitleScreen : Scene<TransitionData> {
     public void StartGame(){
         Services.SceneStackManager.Swap<Main>();
     }
+
+
 }

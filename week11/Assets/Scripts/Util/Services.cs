@@ -14,6 +14,7 @@ public static class Services {
 
     public static Main Main { get; set; }
     public static TitleScreen TitleScreen { get; set; }
+    public static EndScreen EndScreen { get; set; }
 
 
 }
