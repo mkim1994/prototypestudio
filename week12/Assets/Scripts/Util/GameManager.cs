@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour {
     public GameObject TestingScenes;
     public FadeCanvas fadeCavnas;
 
+
+
+
 	void Awake()
 	{
         TestingScenes.SetActive(false);
