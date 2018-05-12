@@ -37,6 +37,10 @@ public class Line : MonoBehaviour {
 
     private bool changePitch;
 
+    private bool holdingDown1;
+    private bool holdingDown2;
+
+
 
     private enum Traffic
     {
@@ -48,7 +52,9 @@ public class Line : MonoBehaviour {
 
 
 	void Start () {
-		
+        holdingDown1 = false;
+        holdingDown2 = false;
+        cameraShaking = false;
 	}
 	
 	// Update is called once per frame
@@ -208,21 +214,29 @@ public class Line : MonoBehaviour {
                     StartCoroutine(WaitRandomTraffic());
                 }
 
-                if (Input.GetAxis("P1_Vertical") > threshold && !player1Die)
+                if (Input.GetAxis("P1_Vertical") > threshold && !player1Die && !holdingDown1)
                 {
                     if (player1 < player1goal)
                     {
+
                         if (currentTraffic == Traffic.Red && redHold)
                         {
+
+                            CameraShake();
                             player1Die = true;
 
-                            StartCoroutine(RespawnPlayer(player1Die, player1, player2goal));
-                        } else if(currentTraffic == Traffic.Red){
                             if (!Services.GameManager.audioController.player1death.isPlaying)
                             {
                                 Services.GameManager.audioController.player1death.Play();
                             }
-                            CameraShake();
+                            StartCoroutine(RespawnPlayer(player1Die, player1, player2goal));
+                        } else if(currentTraffic == Traffic.Red){
+                           /* Debug.Log("player1 red");
+                            if (!Services.GameManager.audioController.player1death.isPlaying)
+                            {
+                                Services.GameManager.audioController.player1death.Play();
+                            }
+                            CameraShake();*/
                         }
                         else if(currentTraffic != Traffic.Red)
                         {
@@ -237,6 +251,7 @@ public class Line : MonoBehaviour {
                         }
                     }
                 } else if(Input.GetAxis("P1_Vertical") <=0.05f && !player1Die){ //not moving up, hasn't died yet
+                    holdingDown1 = false;
                     if(EnemyPresence[player1]){
                         player1Die = true;
 
@@ -247,7 +262,7 @@ public class Line : MonoBehaviour {
                 }
 
 
-                if (Input.GetAxis("P2_Vertical") > threshold && !player2Die)
+                if (Input.GetAxis("P2_Vertical") > threshold && !player2Die && !holdingDown2)
                 {
                     if (player2 > player2goal)
                     {
@@ -255,13 +270,21 @@ public class Line : MonoBehaviour {
                         {
                             player2Die = true;
 
+                            if (!Services.GameManager.audioController.player2death.isPlaying)
+                            {
+                                Services.GameManager.audioController.player2death.Play();
+                            }
+
+                            CameraShake();
                             StartCoroutine(RespawnPlayer(player2Die, player2, player1goal));
+
                         } else if(currentTraffic == Traffic.Red){
 
                             if (!Services.GameManager.audioController.player2death.isPlaying)
                             {
                                 Services.GameManager.audioController.player2death.Play();
                             }
+
                             CameraShake();
                         }
                         else if (currentTraffic != Traffic.Red)
@@ -282,6 +305,7 @@ public class Line : MonoBehaviour {
 
                 }else if (Input.GetAxis("P2_Vertical") <= 0.05f && !player2Die)
                 { //not moving up, hasn't died yet
+                    holdingDown2 = false;
                     if (EnemyPresence[player2])
                     {
                         player2Die = true;
@@ -299,6 +323,10 @@ public class Line : MonoBehaviour {
     }
 
     private void CameraShake(){
+        if (!cameraShaking)
+        {
+            Camera.main.DOShakePosition(0.2f, 3, 20, 90, false).OnStart(() => cameraShaking = true).OnComplete(() => cameraShaking = false);
+        }
         /*if (!cameraShaking)
         {
             cameraShaking = true;
@@ -315,7 +343,8 @@ public class Line : MonoBehaviour {
 
         changePitch = true;
         currentTraffic = Traffic.Red;
-        yield return new WaitForSeconds(0.5f);
+
+        yield return new WaitForSeconds(0.1f);
         redHold = true;
 
         yield return new WaitForSeconds(Random.Range(1f, 3f));
@@ -330,7 +359,15 @@ public class Line : MonoBehaviour {
     }
 
     IEnumerator RespawnPlayer(bool playerDie, int playerN, int originalIndex){
+        if(playerN == player1){
+            holdingDown1 = true;
+        } else if(playerN == player2){
+            holdingDown2 = true;
+        }
+
+        //Camera.main.DOShakePosition(0.2f,3,20,90,false);
         MainLine[playerN].material = Services.GameManager.mats[0];
+
         if (originalIndex == player1goal)
         {
             player2 = originalIndex;
@@ -339,7 +376,7 @@ public class Line : MonoBehaviour {
         {
             player1 = originalIndex;
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
        // MainLine[originalIndex].material = Services.Main.mats[]
         if(originalIndex == player1goal){
             player2Die = false;
